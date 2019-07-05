@@ -6,7 +6,7 @@ namespace ConsoleClassName
 {
     class Program
     {
-        public void Main(string[] ages)
+        public static void Main(string[] ages)
         {
             Console.WriteLine("where");
 

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+namespace ConsoleClassName.Element_inversion
+{
+    class Classelement
+    {
 /*
  练习：将一个字符串数组的元素的顺序进行反转
  *{"3" ,"a", "8", "haha"} 转换为{"haha", "8", "a", "3"}   
  *提示：第i个和的length-i-个进行交换
      */
-namespace ConsoleClassName.Element_inversion
-{
-    class Classelement
-    {
        /* static void Main(string[] args)
         {
             //声明一个字符串数组，并赋值
