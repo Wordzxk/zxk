@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleClassName
+namespace pending
 {
-    
+    class program
+    {
 
+    }
       
 
 }
