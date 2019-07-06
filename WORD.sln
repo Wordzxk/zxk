@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WORD", "ConsoleClassName\WORD.csproj", "{70E2F07D-692D-4752-94A4-3577196F5A48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationfirst", "WebApplicationfirst\WebApplicationfirst.csproj", "{68C2D93A-0F2D-4F3D-95F7-1E2A6AC4BF52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationfirst", "WebApplicationfirst\WebApplicationfirst.csproj", "{68C2D93A-0F2D-4F3D-95F7-1E2A6AC4BF52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
