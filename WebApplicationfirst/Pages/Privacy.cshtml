@@ -3,6 +3,14 @@
 @{
     ViewData["Title"] = "Privacy Policy";
 }
-<h2>@ViewData["Title"]</h2>
-
-<p>Use this page to detail your site's privacy policy.</p>
+<form method="post" asp-page="/Register">
+    <div>
+        <label>用户名:</label><input type="text"name="UserName" />
+    </div>
+    <div>
+        <label>密码:</label><input type="password"name="Password" />
+    </div>
+    <div>
+        <button type="submit">提交</button>
+    </div>
+</form>
