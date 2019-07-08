@@ -7,10 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WebApplicationfirst.Pages
 {
-    public class PrivacyModel : PageModel
+    [BindProperties]
+    public class RegisterModel : PageModel
     {
+        public RegisterModel Register { get; set; }
         public void OnGet()
         {
+            ViewData["Title"] = "问号";
+        }
+        public void Onpost()
+        {
+
         }
     }
 }
