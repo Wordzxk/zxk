@@ -20,6 +20,7 @@ namespace WebApplicationfirst
             /* base.Process(context, output);   ???*/
 
             output.TagName = "a";//原声标签名
+
             //设置a标签里的href的值
             object pageIndex = context.AllAttributes["pageindex"].Value;
             object path = context.AllAttributes["path"].Value;
