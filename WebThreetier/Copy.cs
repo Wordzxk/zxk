@@ -11,16 +11,12 @@ using Microsoft.Extensions.Logging;
 
 namespace WebThreetier
 {
-   
-    public class Program
+    public class Copy : RequiredAttribute
     {
-        public static void Main(string[] args)
+        public override string FormatErrorMessage(string name)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            return $"{name}必须填写";
         }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
     }
+   
 }

@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-//添加贮存室
 namespace BLL.Repository
 {
     public class UserRepository
     {
-        //储存Id
-        public User Get(int Id)
+        private static IList<User> _users;
+        //计数器
+        private static int _idCounter;
+       public User Save(User user)
         {
-            return new User();
+            _users = _users ?? new List<User>();
+            _idCounter++;
+            user.Id = _idCounter;
+            _users.Add(user);
+            return user;
         }
-        //取出Id
-        public int Save(User user)
+
+        public object GetByName(string userName)
         {
-            return -1;
-        }
-        //检查Id
-        public User GetBy(string name)
-        {
-            return null;
+            return _users?.Where(u => u.Name == userName).SingleOrDefault();
         }
     }
 }

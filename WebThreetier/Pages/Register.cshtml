@@ -1,8 +1,23 @@
 ﻿@page
 @model WebThreetier.Pages.RegisterModel
 
-<form method="post">
-    <label>用户名：</label><input asp-for="UserName" />
-    <label>密码</label><input type="password" asp-for="Password" />
-    <button type="submit">提交</button>
+<h2>@ViewData["title"]</h2>
+<form method="post" asp-page="/Register">
+    <div>
+        <label>用户名：</label>
+        <input asp-for="Register.UserName" />
+        <span asp-validation-for="Register.UserName"></span>
+    </div>
+    <div>
+        <label>密码：</label>
+        <input asp-for="Register.Password" />
+        <span asp-validation-for="Register.Password"></span>
+    </div>
+    <div>
+        <label>确认密码：</label><input asp-for="Register.ConfirmPassword" />
+        <span asp-validation-for="Register.ConfirmPassword"></span>
+    </div>
+    <div>
+        <button type="submit">提交</button>
+    </div>
 </form>
