@@ -12,11 +12,12 @@ namespace WebThreetier.Pages
     [BindProperties]
     public class RegisterModel : PageModel
     {
-        private RegisterService _registerService;
+        private UserService _userService;
         public RegisterModel()
         {
-            _registerService = new RegisterService();
+            _userService = new UserService();
         }
+      
         public Register Register { get; set; }
         public void OnGet()
         {
@@ -28,28 +29,25 @@ namespace WebThreetier.Pages
             {
                 return;
             }
-            if (_registerService.HasExist(Register.UserName))
+            if (_userService.HasExist(Register.Name))
             {
-                ModelState.AddModelError("UserName", "* 用户名重复");
+                ModelState.AddModelError("Register.Name", "用户名已经存在");
                 return;
             }
-            _registerService.Register(Register.UserName, Register.Password);
+            _userService.Register(Register.Name, Register.Password);
         }
-        private void save()
-        {
-            throw new NotImplementedException();
-        }
+     
     }
     
     public class Register
     {
-        [Copy]
+        [BRquired]
         [Display(Name = "用户名")]
-        public  string UserName { get; set; }
-        [Copy]
+        public  string Name { get; set; }
+        [BRquired]
         [Display(Name = "密码")]
         public  string Password { get; set; }
-        [Copy]
+        [BRquired]
         [Compare("Password", ErrorMessage = "* 两次输入不一致")]
         public string ConfirmPassword { get; set; }
     }

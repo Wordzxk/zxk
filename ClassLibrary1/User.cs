@@ -1,6 +1,4 @@
-﻿using BLL.Repository;
-using DAL;
-using System;
+﻿using System;
 
 namespace BLL
 {
@@ -14,11 +12,5 @@ namespace BLL
         {
             //添加业务需求
         }
-
-
-       
-
     }
-
 }
-

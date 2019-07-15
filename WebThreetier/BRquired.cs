@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace WebThreetier
 {
-    public class Copy : RequiredAttribute
+    public class BRquired : RequiredAttribute
     {
         public override string FormatErrorMessage(string name)
         {
