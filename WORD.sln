@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "ClassLibrary1\BLL.csproj", "{7E56C6CB-577A-4DF6-9430-698651752D82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRV", "SRV\SRV.csproj", "{A6473275-3798-44C0-8B2E-D69A29278DFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRV", "SRV\SRV.csproj", "{A6473275-3798-44C0-8B2E-D69A29278DFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
