@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "ClassLibrary1\BLL.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRV", "SRV\SRV.csproj", "{A6473275-3798-44C0-8B2E-D69A29278DFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{E10DB5FC-0FDB-4F56-8E5B-F06D24E9A064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A6473275-3798-44C0-8B2E-D69A29278DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6473275-3798-44C0-8B2E-D69A29278DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6473275-3798-44C0-8B2E-D69A29278DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10DB5FC-0FDB-4F56-8E5B-F06D24E9A064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10DB5FC-0FDB-4F56-8E5B-F06D24E9A064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10DB5FC-0FDB-4F56-8E5B-F06D24E9A064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10DB5FC-0FDB-4F56-8E5B-F06D24E9A064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

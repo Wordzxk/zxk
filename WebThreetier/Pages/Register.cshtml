@@ -10,11 +10,12 @@
     </div>
     <div>
         <label>密码：</label>
-        <input asp-for="Register.Password" />
+        <input type="password" name="Register.Password" />
         <span asp-validation-for="Register.Password"></span>
     </div>
     <div>
-        <label>确认密码：</label><input asp-for="Register.ConfirmPassword" />
+        <label>确认密码：</label>
+        <input type="password" name="Register.ConfirmPassword" />
         <span asp-validation-for="Register.ConfirmPassword"></span>
     </div>
     <div>
