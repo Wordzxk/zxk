@@ -14,6 +14,10 @@ namespace BLL
         public string Password { get; set; }
         public User InvitedBy { get; set; }
 
+        //public string Email { get; set; }
+        //public string EmailCode { get; set; }
+        //public bool EmailHasValidated { get; set; }
+
         public void Register()
         {
             if (InvitedBy != null)

@@ -9,7 +9,7 @@ namespace Factory
     {
         public static void Main(string[] ages)
         {
-            new UserRepository().Database.Migrate();
+            //new UserRepository().Database.Migrate();
             Console.WriteLine("测试");
         }
 
