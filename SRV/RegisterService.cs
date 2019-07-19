@@ -52,6 +52,32 @@ namespace SRV
 
         }
 
+        public UserModel GetUser(string userName)
+        {
+            User user = _userRepository.GetByName(userName);
+
+            if (user == null)
+            {
+                return null;
+            }
+            else
+            {
+                UserModel model = new UserModel();
+               
+                model.Id = user.Id;
+                model.Md5Password = user.Password;
+
+                return model;
+
+            }
+            }
+
+        public bool PasswordCorrect(string rampassword, string MD5Password)
+        {
+            return new User().GetMd5Hash(rampassword) == MD5Password;
+        }
+
+      
         //从仓库中得到Email
         public bool ValidateEmail(int id, string code)
         {
@@ -64,7 +90,11 @@ namespace SRV
             return email.ValidationCode == code;
             //return false;
         }
-
-
     }
+    public class UserModel
+    {
+        public int Id { get; set; }
+        public string MD5Password { get; set; } 
+    }
+
 }

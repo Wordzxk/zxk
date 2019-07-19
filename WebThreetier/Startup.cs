@@ -48,6 +48,10 @@ namespace WebThreetier
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            //app.UseCookiePolicy(new CookiePolicyOptions
+            //{
+            //    CheckConsentNeeded = x => false
+            //});
 
             app.UseMvc();
         }

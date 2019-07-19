@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRV", "SRV\SRV.csproj", "{A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factory", "Factory\Factory.csproj", "{E10DB5FC-0FDB-4F56-8E5B-F06D24E9A064}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Study", "Study", "{CF81D9EF-09C9-46EF-92FE-4A0C52B5B128}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3CB8691F-F315-4324-9255-26B34E2709B8} = {CF81D9EF-09C9-46EF-92FE-4A0C52B5B128}
+		{7E56C6CB-577A-4DF6-9430-698651752D82} = {CF81D9EF-09C9-46EF-92FE-4A0C52B5B128}
+		{A6473275-3798-44C0-8B2E-D69A29278DFD} = {CF81D9EF-09C9-46EF-92FE-4A0C52B5B128}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEA62A04-29D4-41F8-85E1-8215580FDDAC}

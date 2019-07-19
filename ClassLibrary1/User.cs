@@ -6,14 +6,12 @@ namespace BLL
 {
     public class User
     {
-        //加密
-        private const string _salt = "KB5A*two2";
-        //
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         public User InvitedBy { get; set; }
-        
+
 
         public void Register()
         {
@@ -21,26 +19,33 @@ namespace BLL
             {
 
             }
+
+            Password = GetMd5Hash(Password);
+        }
+
+        /*进行了重构*/
+
+        public string GetMd5Hash(string input)
+        {
+            //加密
+            const string _salt = "KB5A*two2";
+            //
+
             using (MD5 md5Hash = MD5.Create())
             {
-                //密码加严
-                Password = GetMd5Hash(md5Hash, Password+_salt);
-            }
-        }
-       
-       private static string GetMd5Hash(MD5 md5Hash, string input)
-        {
-            //将字符串转换为byte[]
-            //进行MD5单向加密
-            byte[] date = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                //字符串转换为byte[]
+                //进行MD5加密运算，加严
+                byte[] date = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input + _salt));
 
-            //StringBuilder提高性能
-            StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < date.Length; i++)
-            {
-                sBuilder.Append(date[i].ToString("x2"));
+                //StringBuilder提高性能
+                StringBuilder sBuilder = new StringBuilder();
+                for (int i = 0; i < date.Length; i++)
+                {
+                    sBuilder.Append(date[i].ToString("x2"));
+                }
+                return sBuilder.ToString();
             }
-            return sBuilder.ToString();
+
         }
     }
 }
