@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SRV;
@@ -28,16 +29,18 @@ namespace WebThreetier.Pages.Email
 
         public void OnGet()
         {
-           
             //得到Email
             string id = Request.Query[_id];
             string code = Request.Query[_code];
 
+            //调用Email
             if (!string.IsNullOrEmpty(id) && !string.IsNullOrEmpty(code))
             {
-                ViewData[Valid] = _userService.ValidateEmail(Convert.ToInt32(id), code);
+                ViewData[Valid] = 
+                    _userService.ValidateEmail(Convert.ToInt32(id), code);
             }
         }
+
         public void OnPost()
         {
             if (!ModelState.IsValid)
@@ -48,5 +51,6 @@ namespace WebThreetier.Pages.Email
 
             _userService.SendValidationEmail(EmailAddress, ValidationUrlFormate);
         }
+        //在SRV层激活Email
     }
 }

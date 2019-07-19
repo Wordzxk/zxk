@@ -1,14 +1,23 @@
 ﻿@page
 @model WebThreetier.Pages.Email.ValidateModel
 
-@if (ViewData[""] != null)
+@if (ViewData["valid"] != null)
 {
-    <span>激活成功</span>
+    if ((bool)ViewData["valid"])
+    {
+        <span>激活成功</span>
+    }
+    else
+    {
+        <span>激活失败</span>
+    }
+
 }
 else
 {
-    <span>激活失败</span>
+    <span>异常状态</span>
 }
+
 <form method="post">
     <label>Email:</label><input asp-for="EmailAddress" />
     <button type="submit">提交</button>
