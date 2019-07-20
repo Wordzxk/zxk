@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SRV;
+using WebThreetier.Pages.Shared;
+
 namespace WebThreetier.Pages
 {
     
     [BindProperties]
-    public class RegisterModel : PageModel
+    public class RegisterModel : _LayoutModel /*PageModel*/
     {
         private UserService _userService;
         public RegisterModel()
@@ -19,9 +21,10 @@ namespace WebThreetier.Pages
         }
       
         public Register Register { get; set; }
-        public void OnGet()
+        public override void OnGet()
         {
-            ViewData["title"] = "注册";
+            base.OnGet();
+            
         }
         public void Onpost()
         {

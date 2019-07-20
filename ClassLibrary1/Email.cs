@@ -7,9 +7,9 @@ namespace BLL
     public class Email
     {
         public int Id { get; set; }
-                       //地址
+                       
         public string Address { get; set; }
-                       //确认代码
+                       
         public string ValidationCode { get; set; }
         public DateTime? HasValidated { get; set; }
 

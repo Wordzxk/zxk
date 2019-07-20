@@ -1,5 +1,6 @@
 ﻿using BLL;
 using BLL.Repository;
+using SRV.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,50 @@ namespace SRV
             new UserRepository().Save(user);
         }
 
+        public UserModel GetById(int id)
+        {
+            User user = _userRepository.GetById(id);
+
+            return mapForm(user);
+        }
+        public UserModel mapForm(User user)
+        {
+            if (user == null)
+            {
+                return null;
+            }
+            else
+            {
+                UserModel model = new UserModel()
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    MD5Password = user.Password
+                };
+                return model;
+            }
+        }
+
+        public bool PasswordCorrect(string raw, string md5)
+        {
+            return User.GetMd5Hash(raw) == md5;
+
+        }
+
+        public UserModel GetByName(string name)
+        {
+            User user = _userRepository.GetByName(name);
+            return mapForm(user);
+        }
+
         public bool HasExist(string username)
         {
             return _userRepository.GetByName(username) != null;
         }
-
+        //Email
         public void SendValidationEmail(string emailAddress, string validationUrlFormat)
         {
-            
+
             Email email = new Email { Address = emailAddress };
             email.MakeValidationCode();
             _userRepository.Save(email);
@@ -40,7 +77,7 @@ namespace SRV
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("you_email_address@gmail.com");
             mail.To.Add(emailAddress);            //to_address
-            mail.Subject="尝试激活Email邮件";     //Text Mail
+            mail.Subject = "尝试激活Email邮件";     //Text Mail
             mail.Body = validationUrl;          //This is for texting Smtp mail form GMAIL
 
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
@@ -63,21 +100,16 @@ namespace SRV
             else
             {
                 UserModel model = new UserModel();
-               
+
                 model.Id = user.Id;
-                model.Md5Password = user.Password;
+                model.MD5Password = user.Password;
 
                 return model;
 
             }
-            }
-
-        public bool PasswordCorrect(string rampassword, string MD5Password)
-        {
-            return new User().GetMd5Hash(rampassword) == MD5Password;
         }
 
-      
+
         //从仓库中得到Email
         public bool ValidateEmail(int id, string code)
         {
@@ -91,10 +123,6 @@ namespace SRV
             //return false;
         }
     }
-    public class UserModel
-    {
-        public int Id { get; set; }
-        public string MD5Password { get; set; } 
-    }
+
 
 }

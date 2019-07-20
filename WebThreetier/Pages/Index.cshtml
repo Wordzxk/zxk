@@ -1,8 +1,14 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
 
-
-  <h1 style="background-color:yellow">迎春花开</h1>
+<form method="post" asp-page="/Register">
+    <div>
+        <label>用户名：</label><input type="text" name="UserName" />
+    </div>
+    <div>
+        <label>密码：</label><input type="password" name="Password" />
+    </div>
+    <div>
+        <button type="submit">主界面登陆</button>
+    </div>
+</form>

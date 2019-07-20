@@ -28,6 +28,11 @@ namespace BLL.Repository
             return _users.Where(u => u.Name == name).SingleOrDefault();
         }
 
+        public User GetById(int id)
+        {
+            return _users.Where(u => u.Id == id).SingleOrDefault();
+        }
+
         //得到Email
         public Email GetEmailById(int id)
         {

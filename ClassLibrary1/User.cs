@@ -25,7 +25,7 @@ namespace BLL
 
         /*进行了重构*/
 
-        public string GetMd5Hash(string input)
+        public static string GetMd5Hash(string input)
         {
             //加密
             const string _salt = "KB5A*two2";

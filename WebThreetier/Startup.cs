@@ -46,12 +46,10 @@ namespace WebThreetier
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseHttpsRedirection();   //这是后添加上的
             app.UseStaticFiles();
-            app.UseCookiePolicy();
-            //app.UseCookiePolicy(new CookiePolicyOptions
-            //{
-            //    CheckConsentNeeded = x => false
-            //});
+            //app.UseCookiePolicy();
+
 
             app.UseMvc();
         }
