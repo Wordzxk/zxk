@@ -30,6 +30,22 @@ namespace WebThreetier
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //session需要地方（MemoryCache）存放
+           /* services.AddMemoryCache();
+            //引入session
+            services.AddSession(option =>
+            {
+                //自定义session的cookie的名字
+                option.Cookie = new CookieBuilder
+                {
+                    Name = "MySessionId",
+                    //确保session的cookie不受cookie policy影响
+                    IsEssential = true
+                };
+                //session的有效时间为20分钟，从上一次session的时间算起
+                option.IdleTimeout = new TimeSpan(0, 10, 0);
+            });*/
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -49,7 +65,7 @@ namespace WebThreetier
             app.UseHttpsRedirection();   //这是后添加上的
             app.UseStaticFiles();
             //app.UseCookiePolicy();
-
+            app.UseSession();            //这是后添加上的
 
             app.UseMvc();
         }

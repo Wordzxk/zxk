@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using SRV;
 using SRV.Model;
 using System;
@@ -14,6 +15,8 @@ namespace WebThreetier.Pages.Shared
         protected const string userAuthKey = "userAuth";
         public virtual void OnGet()
         {
+            //HttpContext.Session.SetInt32("int", 996);
+
             string userIdvalue;
             if (Request.Cookies.TryGetValue(userIdKey, out userIdvalue))
             {
