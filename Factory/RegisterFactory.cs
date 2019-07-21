@@ -1,4 +1,5 @@
-﻿using SRV;
+﻿using BLL;
+using SRV;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,8 @@ namespace Factory
 {
     internal class RegisterFactory
     {
+        internal static User CeshiB, CeshiC;
+
         private static UserService _userService;
         static RegisterFactory()
         {
@@ -15,8 +18,8 @@ namespace Factory
 
         internal static void Create()
         {
-            new UserService().Register("测试B",Help.PASSWORD);
-            new UserService().Register("测试C", Help.PASSWORD);
+            CeshiB = _userService.Register("测试B", Help.PASSWORD);
+            CeshiC = _userService.Register("测试C", Help.PASSWORD);
 
         }
 

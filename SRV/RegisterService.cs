@@ -16,12 +16,13 @@ namespace SRV
         {
             _userRepository = new UserRepository();
         }
-
-        public void Register(string username, string password)
+        //更改返回值
+        public User Register(string username, string password)
         {
             User user = new User { Name = username, Password = password };
             user.Register();
             new UserRepository().Save(user);
+            return user;
         }
 
         public UserModel GetById(int id)
