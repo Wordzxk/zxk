@@ -62,10 +62,10 @@ namespace WebThreetier
                 app.UseExceptionHandler("/Error");
             }
 
-            app.UseHttpsRedirection();   //这是后添加上的
+            /*app.UseHttpsRedirection();*/   //这是后添加上的
             app.UseStaticFiles();
-            //app.UseCookiePolicy();
-            app.UseSession();            //这是后添加上的
+            app.UseCookiePolicy();
+            /*app.UseSession();*/            //这是后添加上的
 
             app.UseMvc();
         }
