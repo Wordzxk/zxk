@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BLL.Migrations
 {
-    [DbContext(typeof(UserRepository))]
-    partial class UserRepositoryModelSnapshot : ModelSnapshot
+    [DbContext(typeof(SQLContext))]
+    partial class SQLContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -36,27 +36,64 @@ namespace BLL.Migrations
                     b.ToTable("Emails");
                 });
 
+            modelBuilder.Entity("BLL.Suggest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AuthorId");
+
+                    b.Property<string>("Body");
+
+                    b.Property<DateTime>("PublishedTime");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("Suggests");
+                });
+
             modelBuilder.Entity("BLL.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("EmailId");
+
                     b.Property<int?>("InvitedById");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<string>("Password");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmailId");
+
                     b.HasIndex("InvitedById");
 
-                    b.ToTable("_users");
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("BLL.Suggest", b =>
+                {
+                    b.HasOne("BLL.User", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId");
                 });
 
             modelBuilder.Entity("BLL.User", b =>
                 {
+                    b.HasOne("BLL.Email", "Email")
+                        .WithMany()
+                        .HasForeignKey("EmailId");
+
                     b.HasOne("BLL.User", "InvitedBy")
                         .WithMany()
                         .HasForeignKey("InvitedById");

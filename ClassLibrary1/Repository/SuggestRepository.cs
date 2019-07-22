@@ -15,7 +15,7 @@ namespace BLL.Repository
         public Suggest Save(Suggest suggest)
         {
             _sqLContext.Suggests.Add(suggest);
-            _sqLContext.SaveChanges();
+            //_sqLContext.SaveChanges();
             return suggest;
         }
     }

@@ -1,10 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Linq;
+﻿using System.Linq;
 using System;
 using System.Text;
 namespace BLL.Repository
 {
-    public class UserRepository : SQLContext
+    public class UserRepository 
     {
         private SQLContext _sqLContext;
         public UserRepository()
@@ -12,10 +11,10 @@ namespace BLL.Repository
             _sqLContext = new SQLContext();
         }
 
-       public void Save(User user)
+        public void Save(User user)
         {
             _sqLContext.Add(user);
-            _sqLContext. SaveChanges();
+           _sqLContext. SaveChanges();
         }
         //Email储存
         public void Save(Email email)
@@ -32,19 +31,19 @@ namespace BLL.Repository
 
         public User GetById(int id)
         {
-            return _sqLContext._users.Where(u => u.Id == id).SingleOrDefault();
+            return  _sqLContext._users.Where(u => u.Id == id).SingleOrDefault();
         }
 
         //得到Email
         public Email GetEmailById(int id)
         {
-            Email email = _sqLContext.Emails.Where(e => e.Id == id).SingleOrDefault();
+            Email email =_sqLContext. Emails.Where(e => e.Id == id).SingleOrDefault();
             return email;
         }
       
-        public void Flush()
-        {
-            SaveChanges();
-        }
+        //public void Flush()
+        //{
+        //    SaveChanges();
+        //}
     }
 }

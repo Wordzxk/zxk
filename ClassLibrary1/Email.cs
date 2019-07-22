@@ -6,12 +6,13 @@ namespace BLL
 {
     public class Email
     {
+
         public int Id { get; set; }
-                       
         public string Address { get; set; }
-                       
         public string ValidationCode { get; set; }
         public DateTime? HasValidated { get; set; }
+       
+
 
         public void MakeValidationCode()
         {

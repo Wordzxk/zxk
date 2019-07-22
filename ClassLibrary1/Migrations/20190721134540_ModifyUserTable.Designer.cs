@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BLL.Migrations
 {
-    [DbContext(typeof(UserRepository))]
-    [Migration("20190718045907_ThisName")]
-    partial class ThisName
+    [DbContext(typeof(SQLContext))]
+    [Migration("20190721134540_ModifyUserTable")]
+    partial class ModifyUserTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,11 +29,34 @@ namespace BLL.Migrations
 
                     b.Property<string>("Address");
 
+                    b.Property<DateTime?>("HasValidated");
+
                     b.Property<string>("ValidationCode");
 
                     b.HasKey("Id");
 
                     b.ToTable("Emails");
+                });
+
+            modelBuilder.Entity("BLL.Suggest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AuthorId");
+
+                    b.Property<string>("Body");
+
+                    b.Property<DateTime>("PublishedTime");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("Suggests");
                 });
 
             modelBuilder.Entity("BLL.User", b =>
@@ -53,6 +76,13 @@ namespace BLL.Migrations
                     b.HasIndex("InvitedById");
 
                     b.ToTable("_users");
+                });
+
+            modelBuilder.Entity("BLL.Suggest", b =>
+                {
+                    b.HasOne("BLL.User", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId");
                 });
 
             modelBuilder.Entity("BLL.User", b =>
