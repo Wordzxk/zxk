@@ -4,28 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BLL.Repository
+namespace BLL.Repositorys
 {
-    public class SuggestRepository 
+    public class SuggestRepository :Repository<Suggest>
     {
-        private SQLContext _sqLContext;
-        public SuggestRepository()
-        {
+        //public DbSet<Suggest> Entities { get; set; }
 
-
-            _sqLContext = new SQLContext();
-        }
-
-
-        public Suggest Save(Suggest suggest, int authorId)
-        {
-            suggest.Author = _sqLContext._users
-                .Where(u => u.Id == authorId)
-                .SingleOrDefault();
-
-            _sqLContext.Suggests.Add(suggest);
-            _sqLContext.SaveChanges();
-            return suggest;
-        }
+       
     }
 }

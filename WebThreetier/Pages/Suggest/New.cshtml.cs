@@ -25,7 +25,9 @@ namespace WebThreetier.Pages
 
         [Required]
         public string Title { get; set; }
-        [StringLength(60)]
+        
+        [MinLength(10)]
+        [StringLength(30)]
         public string Body { get; set; }
 
         public override void OnGet()
@@ -38,10 +40,9 @@ namespace WebThreetier.Pages
             {
                 return;
             }
+           
 
-            UserModel currentUser = JsonConvert.DeserializeObject<UserModel>(
-                 HttpContext.Session.GetString("UserName"));
-            _suggsetService.Publish(Title, Body, currentUser.Id);
+            _suggsetService.Publish(Title, Body, CurrentUserId.Value);
         }
     }
 }

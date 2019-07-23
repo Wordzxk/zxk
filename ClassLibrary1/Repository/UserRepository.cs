@@ -1,49 +1,26 @@
 ﻿using System.Linq;
 using System;
 using System.Text;
-namespace BLL.Repository
+using Microsoft.EntityFrameworkCore;
+
+namespace BLL.Repositorys
 {
-    public class UserRepository 
+    public class UserRepository :Repository<User>
     {
-        private SQLContext _sqLContext;
-        public UserRepository()
-        {
-            _sqLContext = new SQLContext();
-        }
-
-        public void Save(User user)
-        {
-            _sqLContext.Add(user);
-           _sqLContext. SaveChanges();
-        }
-        //Email储存
-        public void Save(Email email)
-        {
-            _sqLContext.Add(email);
-            _sqLContext. SaveChanges();
-        }
-
+     
+        //public DbSet<User> Entities { get; set; }
+        //查询Name
         public User GetByName(string name)
         {
-            //查询Name
-            return _sqLContext._users.Where(u => u.Name == name).SingleOrDefault();
+           
+            return entities.Where(u => u.Name == name).SingleOrDefault();
         }
-
+        //查询Id
         public User GetById(int id)
         {
-            return  _sqLContext._users.Where(u => u.Id == id).SingleOrDefault();
+            return entities.Where(u => u.Id == id).SingleOrDefault();
         }
 
-        //得到Email
-        public Email GetEmailById(int id)
-        {
-            Email email =_sqLContext. Emails.Where(e => e.Id == id).SingleOrDefault();
-            return email;
-        }
       
-        //public void Flush()
-        //{
-        //    SaveChanges();
-        //}
     }
 }

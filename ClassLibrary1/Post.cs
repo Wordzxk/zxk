@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BLL
 {
-    public class Post
+    public class Post :Entity
     {
         public int PostId { get; set; }
         public string Title { get; set; }

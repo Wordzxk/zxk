@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using SRV;
 using SRV.Model;
 using System;
@@ -9,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace WebThreetier.Pages.Shared
 {
+    [BindProperties]
     public class _LayoutModel : PageModel
     {
         protected const string userIdKey = "userId";
@@ -38,10 +41,19 @@ namespace WebThreetier.Pages.Shared
                     }
                 }
             }
-            //else
-            //{
-            //    throw new Exception();
-            //}
         }
+        public int? CurrentUserId
+        {
+            get
+            {
+                string fromSession = HttpContext.Session.GetString("UserName");
+                if (string.IsNullOrEmpty(fromSession)) 
+                {
+                    return null;
+                }
+                return JsonConvert.DeserializeObject<UserModel>(fromSession).Id;
+            }
+        }
+
     }
 }

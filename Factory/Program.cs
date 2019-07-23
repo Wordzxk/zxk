@@ -1,6 +1,6 @@
 ﻿
 using BLL;
-using BLL.Repository;
+using BLL.Repositorys;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Logging;
@@ -13,12 +13,13 @@ namespace Factory
     {
         public static void Main(string[] ages)
         {
-            DatabaseFacade db = new SQLContext().Database;
-            db.EnsureDeleted();
-            db.EnsureCreated();
+            //DatabaseFacade db = new SQLContext<object>().Database;
+            //db.EnsureDeleted();
+            //db.EnsureCreated();
 
-            RegisterFactory.Create();
+            //RegisterFactory.Create();
 
+            Console.Read();
         }
 
     }

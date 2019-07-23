@@ -1,33 +1,36 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BLL.Repository
+namespace BLL.Repositorys
 {
-    
-    public class SQLContext : DbContext
+    [BindProperties]
+    public class SQLContext<T> : DbContext where T : class
     {
+        //public DbSet<T> Entities { get; set; }
+        public static readonly LoggerFactory consoleLoggFactory
+            = new LoggerFactory(
+                new[]
+                {
+                    new ConsoleLoggerProvider((category,level) =>true, true)
+                });
+
         public SQLContext()
         {
 
         }
-        public SQLContext(DbContextOptions<SQLContext> options) 
-            : base(options) { }
-        
-        //存到数据库
-        public DbSet<User> _users { get; set; }
-        public DbSet<Email> Emails { get; set; }
-        public DbSet<Suggest> Suggests { get; set; }
-        public DbSet<Blog> Blogs { get; set; }
 
         //定位数据库的地址
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=First;Integrated Security=True;";
-            optionsBuilder.UseSqlServer(connectionString);
-
+            optionsBuilder
+                .UseLoggerFactory(consoleLoggFactory)
+                .UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -36,8 +39,23 @@ namespace BLL.Repository
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Name)
                 .IsUnique();
-         
 
+            //modelBuilder.Entity<Email>()
+            //    .HasOne(e => e.Owner)
+            //    .WithOne(u => u.Email)
+            //    .HasForignKey<Email>(e => e.OwnerId);
+
+            modelBuilder.Entity<BlogToKeywords>()
+                .HasKey(bk => new { bk.BlogId, bk.KeywordId });
+
+            modelBuilder.Entity<Article>()
+                .HasDiscriminator(b => b.DiscrimintorTybe);
         }
+    }
+
+    internal class BlogToKeywords
+    {
+        public object BlogId { get; internal set; }
+        public object KeywordId { get; internal set; }
     }
 }

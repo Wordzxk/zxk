@@ -7,10 +7,11 @@ using BLL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SRV;
+using WebThreetier.Pages.Shared;
 
 namespace WebThreetier.Pages.Email
 {
-    public class ValidateModel : PageModel
+    public class ValidateModel : _LayoutModel
     {
         private const string _id = "id";
         private const string _code = "code";
@@ -27,7 +28,7 @@ namespace WebThreetier.Pages.Email
         [EmailAddress]
         public string EmailAddress { get; set; }
 
-        public void OnGet()
+        public override void OnGet()
         {
             //µÃµ½Email
             string id = Request.Query[_id];
@@ -39,6 +40,7 @@ namespace WebThreetier.Pages.Email
                 ViewData[Valid] = 
                     _userService.ValidateEmail(Convert.ToInt32(id), code);
             }
+           
         }
 
         public void OnPost()

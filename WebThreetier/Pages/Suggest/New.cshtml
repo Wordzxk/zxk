@@ -1,14 +1,14 @@
 ﻿@page
 @model WebThreetier.Pages.NewModel
 @{
-    @ViewDate["Title"] = "提出意见建议";
+   ViewData["Title"] = "提出意见建议";
 }
 
 <form method="post">
-    <label>标题</label><input asp-for="Title" /><span asp-validation-for="Modal"></span>
-    <label>内容</label>
+    <label>标题</label><input asp-for="Title" /><span asp-validation-for="Title"></span>
+    <label>内容</label><br />
+    <textarea asp-for="Body"></textarea><span asp-validation-for="Body"></span>
     <br />
-    <textarea asp-for="Body"></textarea>
     <button type="submit">提交</button>
 </form>
 

@@ -1,5 +1,5 @@
 ﻿using BLL;
-using BLL.Repository;
+using BLL.Repositorys;
 using SRV.Model;
 using System;
 using System.Collections.Generic;
@@ -12,10 +12,13 @@ namespace SRV
     {
    
         private UserRepository _userRepository;
+        private EmailRepository _emailRepository;
         public UserService()
         {
             _userRepository = new UserRepository();
+            _emailRepository = new EmailRepository();
         }
+
         //更改返回值
         public User Register(string username, string password)
         {
@@ -28,7 +31,6 @@ namespace SRV
         public UserModel GetById(int id)
         {
             User user = _userRepository.GetById(id);
-
             return mapForm(user);
         }
         public UserModel mapForm(User user)
@@ -71,7 +73,7 @@ namespace SRV
 
             Email email = new Email { Address = emailAddress };
             email.MakeValidationCode();
-            _userRepository.Save(email);
+            _emailRepository.Save(email);
             //string validationUrl = string.Format(validationUrlFormat, email.Id, email.ValidationCode);
             string validationUrl = string.Format(validationUrlFormat, email.ValidationCode, email.Id);
 
@@ -87,43 +89,17 @@ namespace SRV
             SmtpServer.EnableSsl = true;
 
             SmtpServer.Send(mail);
-
         }
-
-        public UserModel GetUser(string userName)
-        {
-            User user = _userRepository.GetByName(userName);
-
-            if (user == null)
-            {
-                return null;
-            }
-            else
-            {
-                UserModel model = new UserModel();
-
-                model.Id = user.Id;
-                model.MD5Password = user.Password;
-
-                return model;
-
-            }
-        }
-
 
         //从仓库中得到Email
         public bool ValidateEmail(int id, string code)
         {
-            Email email = _userRepository.GetEmailById(id);
+            Email email = _emailRepository.GetEmailById(id);
             //激活Email
             email.Validated();
-
             //_userRepository.Save(email);
-            //_userRepository.Flush();
+            _userRepository.Flush();
             return email.ValidationCode == code;
-            //return false;
         }
     }
-
-
 }
