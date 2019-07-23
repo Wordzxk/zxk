@@ -18,13 +18,14 @@ namespace SRV
         {
             Suggest suggest = new Suggest
             {
-                Author = new UserRepository().GetById(authorId),
+
+                //Author = new UserRepository().GetById(authorId),
                 Body = body,
                 Title = title,
 
             };
             suggest.Publish();
-            return _suggestRepository.Save(suggest);
+            return _suggestRepository.Save(suggest,authorId);
 
 
         }

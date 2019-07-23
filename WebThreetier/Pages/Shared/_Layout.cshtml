@@ -1,5 +1,8 @@
 ﻿@model _LayoutModel
 
+@{ 
+}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +20,12 @@
            <span>你好！@ViewData["UserName"]</span>
        }
    </header>
+   <h2>@ViewData["Title"]</h2>
         @RenderBody()
-    <footer>大神小班...</footer>
+    <footer>
+        <hr />
+    大神小班...
+    </footer>
     
 </body>
 </html>

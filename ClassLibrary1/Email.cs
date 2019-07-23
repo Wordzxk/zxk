@@ -11,8 +11,7 @@ namespace BLL
         public string Address { get; set; }
         public string ValidationCode { get; set; }
         public DateTime? HasValidated { get; set; }
-       
-
+        public string Owner { get;  set; }
 
         public void MakeValidationCode()
         {

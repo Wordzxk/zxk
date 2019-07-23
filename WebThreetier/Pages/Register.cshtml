@@ -1,7 +1,9 @@
 ﻿@page
 @model WebThreetier.Pages.RegisterModel
 
-<h2>@ViewData["title"]</h2>
+@{ 
+    @ViewData["Title"];
+}
 <form method="post" asp-page="/Register">
     <div>
         <label>用户名：</label>

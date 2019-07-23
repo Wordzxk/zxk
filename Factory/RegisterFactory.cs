@@ -1,5 +1,5 @@
 ﻿using BLL;
-using SRV;
+using BLL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,17 +10,32 @@ namespace Factory
     {
         internal static User CeshiB, CeshiC;
 
-        private static UserService _userService;
+        private static UserRepository _userRe;
         static RegisterFactory()
         {
-            _userService = new UserService();
+            _userRe = new UserRepository();
         }
 
         internal static void Create()
         {
-            CeshiB = _userService.Register("测试B", Help.PASSWORD);
-            CeshiC = _userService.Register("测试C", Help.PASSWORD);
+            CeshiB = register("测试B");
+          
+            CeshiC = register("测试C");
+           
+        }
+        private static User register(string Name)
+        {
+            //null值判断
+            if (Name == null)
+            {
+                throw new ArgumentNullException(nameof(Name));
+            }
 
+            User user = new User { Name = "测试B", Password = Help.PASSWORD };
+            user.Register();
+            _userRe.Save(user);
+
+            return user;
         }
 
     }

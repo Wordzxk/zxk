@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\BLL.csproj" />
     <ProjectReference Include="..\SRV\SRV.csproj" />
   </ItemGroup>
 

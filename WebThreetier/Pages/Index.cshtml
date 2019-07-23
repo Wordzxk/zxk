@@ -1,14 +1,12 @@
 ﻿@page
 @model IndexModel
 
-<form method="post" asp-page="/Register">
-    <div>
-        <label>用户名：</label><input type="text" name="UserName" />
-    </div>
-    <div>
-        <label>密码：</label><input type="password" name="Password" />
-    </div>
-    <div>
-        <button type="submit">主界面登陆</button>
-    </div>
-</form>
+@{ 
+    ViewData["Title"] = "首页";
+}
+
+<a href="/Register">注册</a><br />
+<a href="/Log/On">登陆</a><br />
+<a href="/Email/Validate">Email验证</a><br />
+<a href=" /Suggest/New">提出意见建议</a><br />
+

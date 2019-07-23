@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace BLL
 {
+    [BindProperties]
     public class User
     {
-
         public int Id { get; set; }
         public string Name { get; set; }
         //[Required]
