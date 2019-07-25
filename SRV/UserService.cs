@@ -1,5 +1,6 @@
 ﻿using BLL;
 using BLL.Repositorys;
+using Microsoft.AspNetCore.Mvc;
 using SRV.Model;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Net.Mail;
 
 namespace SRV
 {
+    [BindProperties]
     public class UserService
     {
    
@@ -19,7 +21,7 @@ namespace SRV
             _emailRepository = new EmailRepository();
         }
 
-        //更改返回值
+        //更改User返回值
         public User Register(string username, string password)
         {
             User user = new User { Name = username, Password = password };
@@ -27,12 +29,13 @@ namespace SRV
             new UserRepository().Save(user);
             return user;
         }
-
+        //-LauoutModel引用
         public UserModel GetById(int id)
         {
             User user = _userRepository.GetById(id);
             return mapForm(user);
         }
+
         public UserModel mapForm(User user)
         {
             if (user == null)
@@ -43,6 +46,7 @@ namespace SRV
             {
                 UserModel model = new UserModel()
                 {
+                    //属性赋值
                     Id = user.Id,
                     Name = user.Name,
                     MD5Password = user.Password
@@ -71,7 +75,7 @@ namespace SRV
         public void SendValidationEmail(string emailAddress, string validationUrlFormat)
         {
 
-            Email email = new Email { Address = emailAddress };
+            Emails email = new Emails { Address = emailAddress };
             email.MakeValidationCode();
             _emailRepository.Save(email);
             //string validationUrl = string.Format(validationUrlFormat, email.Id, email.ValidationCode);
@@ -94,7 +98,7 @@ namespace SRV
         //从仓库中得到Email
         public bool ValidateEmail(int id, string code)
         {
-            Email email = _emailRepository.GetEmailById(id);
+            Emails email = _emailRepository.GetEmailById(id);
             //激活Email
             email.Validated();
             //_userRepository.Save(email);

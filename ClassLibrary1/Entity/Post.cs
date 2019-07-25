@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace BLL
 {
-    public class Post :Entity
+    [NotMapped]
+    public class Post : Article
     {
         public int PostId { get; set; }
         public string Title { get; set; }

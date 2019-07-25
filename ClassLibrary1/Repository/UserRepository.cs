@@ -2,9 +2,11 @@
 using System;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BLL.Repositorys
 {
+    [BindProperties]
     public class UserRepository :Repository<User>
     {
      
@@ -21,6 +23,9 @@ namespace BLL.Repositorys
             return entities.Where(u => u.Id == id).SingleOrDefault();
         }
 
-      
+        public void SetEntities(SQLContext currentContext)
+        {
+            return;
+        }
     }
 }

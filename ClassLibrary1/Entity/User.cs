@@ -11,11 +11,10 @@ namespace BLL
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        //[Required]
         public string Password { get; set; }
-        //public string ConfimPassword { get; set; }
         public User InvitedBy { get; set; }
-        public Email Email { get; set; }
+        //public Emails Email { get; set; }
+
 
         public void Register()
         {

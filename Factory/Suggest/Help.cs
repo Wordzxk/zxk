@@ -7,8 +7,6 @@ namespace Factory
     internal class Help
     {
 
-
-
         internal const string PASSWORD = "12345";
     }
 }

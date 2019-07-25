@@ -25,13 +25,7 @@ namespace Factory
         }
         private static User register(string Name)
         {
-            //null值判断
-            if (Name == null)
-            {
-                throw new ArgumentNullException(nameof(Name));
-            }
-
-            User user = new User { Name = "测试B", Password = Help.PASSWORD };
+            User user = new User { Name = Name, Password = Help.PASSWORD };
             user.Register();
             _userRe.Save(user);
 

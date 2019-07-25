@@ -31,7 +31,7 @@ namespace WebThreetier
             });
 
             //session需要地方（MemoryCache）存放
-           /* services.AddMemoryCache();
+            services.AddMemoryCache();
             //引入session
             services.AddSession(option =>
             {
@@ -44,8 +44,8 @@ namespace WebThreetier
                 };
                 //session的有效时间为20分钟，从上一次session的时间算起
                 option.IdleTimeout = new TimeSpan(0, 10, 0);
-            });*/
-            
+            });
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -62,10 +62,10 @@ namespace WebThreetier
                 app.UseExceptionHandler("/Error");
             }
 
-            /*app.UseHttpsRedirection();*/   //这是后添加上的
+            app.UseHttpsRedirection();   //这是后添加上的
             app.UseStaticFiles();
-            app.UseCookiePolicy();
-            /*app.UseSession();*/            //这是后添加上的
+            //app.UseCookiePolicy();
+            app.UseSession();            //这是后添加上的
 
             app.UseMvc();
         }

@@ -41,7 +41,7 @@ namespace WebThreetier.Pages
         }
      
     }
-    
+    [BindProperties]
     public class Register
     {
         [BRquired]

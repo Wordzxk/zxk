@@ -18,6 +18,7 @@ namespace SRV
         {
             UserRepository userRepository = new UserRepository();
             //userRepository.CurrentContext = _suggestRepository.CurrentContext;
+            userRepository.SetEntities(_suggestRepository.CurrentContext);
 
             Suggest suggest = new Suggest
             {
@@ -28,8 +29,6 @@ namespace SRV
             };
             suggest.Publish();
             return _suggestRepository.Save(suggest);
-
-
+            }
         }
-    }
 }

@@ -7,6 +7,9 @@ namespace BLL
 {
     public class Article
     {
+        public int Id { get; set; }
+
+
         public string DiscrimintorTybe { get;  set; }
     }
 }

@@ -6,11 +6,11 @@ using System.Text;
 
 namespace BLL.Repositorys
 {
-    public class EmailRepository :Repository<Email>
+    public class EmailRepository :Repository<Emails>
     {
        //public DbSet<Email> Entities { get; set; }
         //得到Email
-        public Email GetEmailById(int id)
+        public Emails GetEmailById(int id)
         {
             return entities.Where(e => e.Id == id).SingleOrDefault();
 

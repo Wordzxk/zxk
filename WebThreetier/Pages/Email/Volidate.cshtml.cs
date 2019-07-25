@@ -40,7 +40,7 @@ namespace WebThreetier.Pages.Email
                 ViewData[Valid] = 
                     _userService.ValidateEmail(Convert.ToInt32(id), code);
             }
-           
+            base.OnGet();
         }
 
         public void OnPost()

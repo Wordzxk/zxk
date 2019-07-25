@@ -11,11 +11,11 @@ namespace BLL.Repositorys
     {
         public Repository()
         {
-            CurrentContext = new SQLContext<T>();
+            CurrentContext = new SQLContext();
             entities = CurrentContext.Set<T>();
         }
-        public SQLContext<T> CurrentContext { get; set; }
-        public DbSet<T> entities { get; set; }
+        public SQLContext CurrentContext { get; set; }
+        protected DbSet<T> entities { get; set; }
 
         public void Flush()
         {

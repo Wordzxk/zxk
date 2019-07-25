@@ -4,14 +4,19 @@ using System.Text;
 
 namespace BLL
 {
-    public class Email
+    public class Emails
     {
 
+        public Emails()
+        {
+
+        }
+        //public User Owner { get; set; }
         public int Id { get; set; }
         public string Address { get; set; }
         public string ValidationCode { get; set; }
         public DateTime? HasValidated { get; set; }
-        public string Owner { get;  set; }
+
 
         public void MakeValidationCode()
         {
