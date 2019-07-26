@@ -24,15 +24,16 @@ namespace WebThreetier.Pages
 
 
         [Required]
+        [StringLength(10)]
         public string Title { get; set; }
-        
+        [Required]
         [MinLength(10)]
         [StringLength(30)]
         public string Body { get; set; }
 
         public override void OnGet()
         {
-
+            base.OnGet();
         }
         public void OnPost()
         {

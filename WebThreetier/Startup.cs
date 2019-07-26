@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SRV;
 
 namespace WebThreetier
 {
@@ -32,16 +33,18 @@ namespace WebThreetier
 
             //session需要地方（MemoryCache）存放
             services.AddMemoryCache();
+            //控制反转
+            //services.AddScoped<IUserService, MockUserService>();
             //引入session
             services.AddSession(option =>
             {
-                //自定义session的cookie的名字
-                option.Cookie = new CookieBuilder
-                {
-                    Name = "MySessionId",
-                    //确保session的cookie不受cookie policy影响
-                    IsEssential = true
-                };
+                ////自定义session的cookie的名字
+                //option.Cookie = new CookieBuilder
+                //{
+                //    Name = "MySessionId",
+                //    //确保session的cookie不受cookie policy影响
+                //    IsEssential = true
+                //};
                 //session的有效时间为20分钟，从上一次session的时间算起
                 option.IdleTimeout = new TimeSpan(0, 10, 0);
             });

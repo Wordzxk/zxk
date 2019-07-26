@@ -27,6 +27,11 @@ namespace BLL.Repositorys
             optionsBuilder
                 //.UseLoggerFactory(consoleLoggFactory)
                 .UseSqlServer(connectionString);
+            //释放using范围里免得
+            //using (SQLContext context = new SQLContext())
+            //{
+
+            //}
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

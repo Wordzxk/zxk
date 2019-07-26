@@ -10,7 +10,7 @@ using System.Net.Mail;
 namespace SRV
 {
     [BindProperties]
-    public class UserService
+    public class UserService :IUserService
     {
    
         private UserRepository _userRepository;
@@ -18,6 +18,7 @@ namespace SRV
         public UserService()
         {
             _userRepository = new UserRepository();
+            
             _emailRepository = new EmailRepository();
         }
 
