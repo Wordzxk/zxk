@@ -25,6 +25,7 @@ namespace WebThreetier.Pages
 
 
         [Required]
+        [StringLength(10)]
         public string Title { get; set; }
         [Required]
         [MinLength(10)]
