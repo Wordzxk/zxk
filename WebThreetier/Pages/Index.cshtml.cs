@@ -8,6 +8,7 @@ using WebThreetier.Pages.Shared;
 
 namespace WebThreetier.Pages
 {
+    [BindProperties]
     public class IndexModel : _LayoutModel                /*PageModel*/
     {
         public override void OnGet()

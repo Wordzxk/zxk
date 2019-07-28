@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.Repositorys;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SRV;
@@ -33,8 +35,18 @@ namespace WebThreetier
 
             //session需要地方（MemoryCache）存放
             services.AddMemoryCache();
+            services.AddScoped<DbContext, SQLContext>();
+
             //控制反转
-            //services.AddScoped<IUserService, MockUserService>();
+            //services.AddScoped<IUserService, UserService>();
+            //services.AddTransient<IUserService, UserService>();
+            //services.AddSingleton<IUserService, UserService>();
+
+            //services.AddService();
+            //services.AddRepositories();
+
+
+
             //引入session
             services.AddSession(option =>
             {

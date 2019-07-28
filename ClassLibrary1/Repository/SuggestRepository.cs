@@ -8,8 +8,11 @@ namespace BLL.Repositorys
 {
     public class SuggestRepository :Repository<Suggest>
     {
-        //public DbSet<Suggest> Entities { get; set; }
 
-       
+        public Suggest Get(int id)
+        {
+            return entities.Where(u => u.Id == id).SingleOrDefault();
+        }
+
     }
 }

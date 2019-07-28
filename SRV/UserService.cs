@@ -9,8 +9,7 @@ using System.Net.Mail;
 
 namespace SRV
 {
-    [BindProperties]
-    public class UserService :IUserService
+    public class UserService 
     {
    
         private UserRepository _userRepository;

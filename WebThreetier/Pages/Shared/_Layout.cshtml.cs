@@ -39,18 +39,18 @@ namespace WebThreetier.Pages.Shared
                 }
             }
         }
-        public int? CurrentUserId
-        {
-            get
-            {
-                string fromSession = HttpContext.Session.GetString("UserName");
-                if (string.IsNullOrEmpty(fromSession))
-                {
-                    return null;
-                }
-                return JsonConvert.DeserializeObject<UserModel>(fromSession).Id;
-            }
-        }
+        //public int? CurrentUserId
+        //{
+        //    get
+        //    {
+        //        string fromSession = HttpContext.Session.GetString("UserName");
+        //        if (string.IsNullOrEmpty(fromSession))
+        //        {
+        //            return null;
+        //        }
+        //        return JsonConvert.DeserializeObject<UserModel>(fromSession).Id;
+        //    }
+        //}
 
     }
 }
