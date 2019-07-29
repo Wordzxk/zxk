@@ -1,35 +1,22 @@
 ﻿using BLL;
 using BLL.Repositorys;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SRV
 {
-    public class SuggestService : BaseService, ISuggestService
+    public class SuggestService 
     {
         private SuggestRepository _suggestRepository;
-        public SuggestService(
-            IHttpContextAccessor accessor,
-            SuggestRepository suggestRepository,
-            UserRepository userRepository) : base(accessor, userRepository)
+        public SuggestService()
         {
-            _suggestRepository = suggestRepository;
-        }
-        //暂未引用
-        public DTOSuggest Get(int id)
-        {
-            Suggest suggest = _suggestRepository.Get(id);
-
-            return new DTOSuggest
-            {
-                Title = suggest.Title,
-                Body = suggest.Body
-            };
+            _suggestRepository = new SuggestRepository();
         }
 
-        public Suggest Publish(string title, string body/*, int authorId*/)
+        public Suggest Publish(string title, string body, int authorId)
         {
             UserRepository userRepository = new UserRepository();
             //userRepository.CurrentContext = _suggestRepository.CurrentContext;
@@ -37,7 +24,7 @@ namespace SRV
 
             Suggest suggest = new Suggest
             {
-                Author = currentUser,
+                Author = new UserRepository().GetById(authorId),
                 Body = body,
                 Title = title,
 
@@ -47,9 +34,5 @@ namespace SRV
         }
 
     }
-    public class DTOSuggest
-    {
-        public string Title { get; set; }
-        public string Body { get; set; }
-    }
+   
 }

@@ -11,15 +11,6 @@ namespace BLL.Repositorys
     
     public class SQLContext : DbContext
     {
-        //public DbSet<T> Entities { get; set; }
-        //public static readonly LoggerFactory consoleLoggFactory
-        //    = new LoggerFactory(
-        //        new[]
-        //        {
-        //            new ConsoleLoggerProvider((category,level) =>true, true)
-        //        });
-
-
         //定位数据库的地址
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,11 +18,7 @@ namespace BLL.Repositorys
             optionsBuilder
                 //.UseLoggerFactory(consoleLoggFactory)
                 .UseSqlServer(connectionString);
-            //释放using范围里免得
-            //using (SQLContext context = new SQLContext())
-            //{
-
-            //}
+       
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

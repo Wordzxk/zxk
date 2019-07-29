@@ -16,36 +16,36 @@ namespace WebThreetier.Pages
     [BindProperties]
     public class NewModel : _LayoutModel
     {
-        private ISuggestService _suggsetService;
+        private SuggestService _suggestService;
 
-        public NewModel(ISuggestService suggestService)
+        public NewModel()
         {
-            _suggsetService = suggestService;
+            _suggestService = new SuggestService();
         }
 
 
         [Required]
-        [StringLength(10)]
         public string Title { get; set; }
         [Required]
         [MinLength(10)]
         public string Body { get; set; }
 
-        public DTOSuggest Suggest { get; set; }
+        //public DTOSuggest Suggest { get; set; }
 
         public override void OnGet()
         {
             base.OnGet();
         }
-        public IActionResult OnPost()
+        public void OnPost()
         {
             if (!ModelState.IsValid)
             {
-                return Page();
+                return ;
             }
-            int id = _suggsetService.Publish(Title, Body).Id;
-            return Redirect("/Suggest/Single?id=" + id);
-            //_suggsetService.Publish(Title, Body, CurrentUserId.Value);
+            //反序列化
+            //UserModel currentUser = JsonConvert.DeserializeObject<UserModel>(
+            //    HttpContext.Session.GetString("UserName"));
+            _suggestService.Publish(Title, Body, CurrentUserId.Value);
         }
     }
 }

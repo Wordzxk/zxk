@@ -8,29 +8,29 @@ namespace Factory
 {
     internal class RegisterFactory
     {
-        internal static User CeshiB, CeshiC;
+        //internal static User CeshiB, CeshiC;
 
-        private static UserRepository _userRe;
-        static RegisterFactory()
-        {
-            _userRe = new UserRepository();
-        }
+        //private static UserRepository _userRe;
+        //static RegisterFactory()
+        //{
+        //    _userRe = new UserRepository();
+        //}
 
-        internal static void Create()
-        {
-            CeshiB = register("测试B");
+        //internal static void Create()
+        //{
+        //    CeshiB = register("测试B");
           
-            CeshiC = register("测试C");
+        //    CeshiC = register("测试C");
            
-        }
-        private static User register(string Name)
-        {
-            User user = new User { Name = Name, Password = Help.PASSWORD };
-            user.Register();
-            _userRe.Save(user);
+        //}
+        //private static User register(string Name)
+        //{
+        //    User user = new User { Name = Name, Password = Help.PASSWORD };
+        //    user.Register();
+        //    _userRe.Save(user);
 
-            return user;
-        }
+        //    return user;
+        //}
 
     }
 }

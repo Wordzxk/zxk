@@ -8,7 +8,7 @@ namespace BLL.Repositorys
 {
     public class EmailRepository :Repository<Emails>
     {
-       //public DbSet<Email> Entities { get; set; }
+       
         //得到Email
         public Emails GetEmailById(int id)
         {

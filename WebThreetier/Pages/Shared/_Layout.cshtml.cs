@@ -18,7 +18,6 @@ namespace WebThreetier.Pages.Shared
         protected const string userAuthKey = "userAuth";
         public virtual void OnGet()
         {
-
             string userIdvalue;
             if (Request.Cookies.TryGetValue(userIdKey, out userIdvalue))
             {
@@ -39,18 +38,19 @@ namespace WebThreetier.Pages.Shared
                 }
             }
         }
-        //public int? CurrentUserId
-        //{
-        //    get
-        //    {
-        //        string fromSession = HttpContext.Session.GetString("UserName");
-        //        if (string.IsNullOrEmpty(fromSession))
-        //        {
-        //            return null;
-        //        }
-        //        return JsonConvert.DeserializeObject<UserModel>(fromSession).Id;
-        //    }
-        //}
+
+        public int? CurrentUserId 
+        {
+            get
+            {
+                string fromSession = HttpContext.Session.GetString("UserName");
+                if (string.IsNullOrEmpty(fromSession))
+                {
+                    return null;
+                }
+                return JsonConvert.DeserializeObject<UserModel>(fromSession).Id;
+            }
+        }
 
     }
 }

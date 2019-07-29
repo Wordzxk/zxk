@@ -7,7 +7,6 @@ namespace BLL.Repositorys
 {
    public class BlogRepository : Repository<Blog>
     {
-        //public DbSet<Blog> Entities { get; set; }
         public void Add(Post post)
         {
 

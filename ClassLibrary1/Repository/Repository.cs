@@ -9,6 +9,7 @@ namespace BLL.Repositorys
     //Register的子类调用这个类
     public class Repository<T> where T : class
     {
+
         public Repository()
         {
             CurrentContext = new SQLContext();
@@ -30,9 +31,7 @@ namespace BLL.Repositorys
 
             return entitly;
         }
-        //public T Get(int id)
-        //{
-        //    return entities.Single(u => u.Id == id);
-        //}
+
+
     }
 }

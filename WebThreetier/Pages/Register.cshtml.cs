@@ -12,7 +12,7 @@ namespace WebThreetier.Pages
 {
     
     [BindProperties]
-    public class RegisterModel : _LayoutModel /*PageModel*/
+    public class RegisterModel : _LayoutModel 
     {
         private UserService _userService;
         public RegisterModel()
