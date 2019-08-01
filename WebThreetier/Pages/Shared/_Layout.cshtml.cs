@@ -43,6 +43,7 @@ namespace WebThreetier.Pages.Shared
         {
             get
             {
+                //空
                 string fromSession = HttpContext.Session.GetString("UserName");
                 if (string.IsNullOrEmpty(fromSession))
                 {

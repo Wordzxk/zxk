@@ -1,7 +1,7 @@
 ﻿namespace WebThreetier
 {
-    public interface IServiceCollect
+    public class IServiceCollect
     {
 
-    }
+    }   
 }

@@ -17,7 +17,7 @@ namespace Factory
             db.EnsureDeleted();
             db.EnsureCreated();
 
-            RegisterFactory.Create();
+            //RegisterFactory.Create();
 
             Console.Read();
         }

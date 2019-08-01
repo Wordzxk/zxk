@@ -35,6 +35,8 @@ namespace WebThreetier
 
             //session需要地方（MemoryCache）存放
             services.AddMemoryCache();
+            services.AddHttpContextAccessor();
+
             services.AddScoped<DbContext, SQLContext>();
 
             //控制反转
@@ -42,11 +44,7 @@ namespace WebThreetier
             //services.AddTransient<IUserService, UserService>();
             //services.AddSingleton<IUserService, UserService>();
 
-            //services.AddService();
-            //services.AddRepositories();
-
-
-
+            services.AddHttpContextAccessor();
             //引入session
             services.AddSession(option =>
             {

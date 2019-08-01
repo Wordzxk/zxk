@@ -19,8 +19,8 @@ namespace SRV
         public Suggest Publish(string title, string body, int authorId)
         {
             UserRepository userRepository = new UserRepository();
-            //userRepository.CurrentContext = _suggestRepository.CurrentContext;
-            //userRepository.SetEntities(_suggestRepository.CurrentContext);
+            userRepository.CurrentContext = _suggestRepository.CurrentContext;
+            userRepository.SetEntities(_suggestRepository.CurrentContext);
 
             Suggest suggest = new Suggest
             {
