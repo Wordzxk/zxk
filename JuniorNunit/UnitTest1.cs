@@ -1,5 +1,11 @@
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using NUnit.Framework;
+using SRV;
+using SRV.Model;
 using System;
+using WebThreetier.Pages.Log;
+using WebThreetier.Pages.Shared;
 
 namespace Word
 {
@@ -7,9 +13,14 @@ namespace Word
     [TestFixture(Category = "One")]
     public class Tests
     {
+        private OnModel model;
+        private MockUserService service;
+
         [SetUp]
         public void Setup()
         {
+            service = new MockUserService();
+            model = new OnModel(service);
         }
         //销毁测试环境
         [TearDown]
@@ -19,60 +30,41 @@ namespace Word
         }
 
         [Test]
-        public void ArrayTest()
-        {
-            int[] array = {1,3,4,6,11,22,33 };
-
-            Assert.That(array.Length, Is.EqualTo(7));
-            Assert.That(array.Length, Is.GreaterThanOrEqualTo(7));
-
-            Assert.Pass();
-        }
-        [Test]
         public void TestOne()
         {
-            int[] array = { 1, 3, 4, 6, 11, 22, 33 };
-            Assert.That(array, Is.Not.Null);
-            Assert.That(array.Length, Is.Not.Null);
+            OnModel model = new OnModel(new UserService());
+            model.Name = "测试K";
+            model.Onpost();
+            Assert.That(model.ModelState.ErrorCount, Is.EqualTo(1));
+            Assert.That(model.ModelState[OnModel.USERNAME].Errors[0].ErrorMessage,
+                Is.EqualTo(OnModel.USERNAME_NOT_EXIST));
+
         }
         [Test]
         public void TestTwo()
         {
-           
-            Assert.That("Hello, Word", Is.Not.Empty.Or.Null);
-            Assert.That("Hello".StartsWith("Hello"), Is.True);
-            Assert.That("Word", Is.Not.Empty.Or.Null);
-        }
-        [Test]
-        public void Testthress()
-        {
-            Assert.That("", Is.Empty);
-        }
-        [Test]
-        public void Testfour()
-        {
-            
-            Assert.That(6 > 22, Is.False);
-            Assert.That(11 > 1, Is.True);
-        }
-        [Test]
-        public void Testfive()
-        {
-            int[] array = { 1, 3, 4, 6, 11, 22, 33 };
+            //用户名与密码不匹配
 
-            Assert.That(array, Is.EquivalentTo(new int[] { 1, 3, 4, 6, 11, 22, 33 }));
+
+
+
+        }
+        [Test]
+        public void TestThress()
+        {
+            //问题待解决
+            //model.Name = "测试";
+            //model.Password = "1111";
+
+            //model.Onpost();
+            //UserModel user = service.GetByName(model.Name);
+
+            //Assert.That(model.HttpContext.Session.GetString(_LayoutModel.USER_KEY_IN_SESSION,
+            //    Is.EqualTo(JsonConvert.SerializeObject(user))));
+
 
         }
 
-    }
-    
-   public class TestTwo
-    {
-        [SetUp]
-        public void One()
-        {
-           
-        }
-       
+
     }
 }

@@ -37,14 +37,14 @@ namespace WebThreetier
             services.AddMemoryCache();
             services.AddHttpContextAccessor();
 
-            services.AddScoped<DbContext, SQLContext>();
+            //services.AddScoped<DbContext, SQLContext>();
 
             //控制反转
             //services.AddScoped<IUserService, UserService>();
             //services.AddTransient<IUserService, UserService>();
             //services.AddSingleton<IUserService, UserService>();
 
-            services.AddHttpContextAccessor();
+            //services.AddHttpContextAccessor();
             //引入session
             services.AddSession(option =>
             {

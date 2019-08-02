@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SRV.Model
 {
-    [BindProperties]
+    
     public class UserModel
     {
         //用于-LayoutModel

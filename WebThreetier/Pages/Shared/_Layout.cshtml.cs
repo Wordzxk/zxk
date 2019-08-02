@@ -16,7 +16,8 @@ namespace WebThreetier.Pages.Shared
     {
         protected const string userIdKey = "userId";
         protected const string userAuthKey = "userAuth";
-        public virtual void OnGet()
+
+         public virtual void OnGet()
         {
             string userIdvalue;
             if (Request.Cookies.TryGetValue(userIdKey, out userIdvalue))

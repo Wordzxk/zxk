@@ -15,9 +15,9 @@ namespace WebThreetier.Pages
     public class RegisterModel : _LayoutModel 
     {
         private UserService _userService;
-        public RegisterModel()
+        public RegisterModel(UserService userService)
         {
-            _userService = new UserService();
+            _userService = userService;
         }
       
         public Register Register { get; set; }

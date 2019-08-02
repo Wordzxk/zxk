@@ -53,6 +53,6 @@ namespace WebThreetier.Pages.Email
 
             _userService.SendValidationEmail(EmailAddress, ValidationUrlFormate);
         }
-        //ÔÚSRV²ã¼¤»îEmail
+      
     }
 }

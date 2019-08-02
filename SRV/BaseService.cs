@@ -23,9 +23,12 @@ namespace SRV
         //    autoMapperConfig = new MapperConfiguration(gg =>
         //    {
         //        gg.CreateMap<Suggest, DTOSuggest>()
-        //        .ForMember(s => s.Body, opt => ignore());
+        //        .ForMember(d => d.Subject, opt => opt.MapFrom(s=>s.Title);
+        //        
+        //        gg.CreateMap<DTOSuggest, Suggest>();
         //    });
         //}
+
         //引入mapper属性使子类可以使用
         //protected IMapper mapper
         //{
@@ -41,6 +44,7 @@ namespace SRV
         //    this.accessor = accessor;
         //    this.userRepository = userRepository;
         //}
+
         //protected User currentUser
         //{
         //    get

@@ -13,7 +13,7 @@ namespace SRV
         bool PasswordCorrect(string raw, string md5);
         UserModel GetByName(string name);
         bool HasExist(string username);
-         void SendValidationEmail(string emailAddress, string validationUrlFormat);
+        void SendValidationEmail(string emailAddress, string validationUrlFormat);
         bool ValidateEmail(int id, string code);
 
     }

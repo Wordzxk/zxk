@@ -8,24 +8,36 @@ namespace SRV
 {
     public class MockUserService : IUserService
     {
+        private Guid guid;
+        public MockUserService()
+        {
+            guid = new Guid();
+        }
+
         public UserModel GetById(int id)
         {
-            throw new NotImplementedException();
             //测试用例
-            //if (id == 1)
-            //{
-            //    return new UserModel { Name = "", MD5Password = "1234" };
-            //}
-            //else
-            //{
-            //    return null;
-            //}
-
+            if (id == 1)
+            {
+                return new UserModel { Name = "", MD5Password = "1234" };
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public UserModel GetByName(string name)
         {
-            throw new NotImplementedException();
+            switch (name)
+            {
+                case "测试":
+                    return new UserModel { Id = 1, MD5Password = "1111", Name = name };
+                case "测试A":
+                    return new UserModel { Id = 2, MD5Password = "1111", Name = name };
+                default:
+                    return null;
+            }
         }
 
         public bool HasExist(string username)
