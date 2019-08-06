@@ -11,13 +11,15 @@ namespace Factory
 {
     class Program
     {
-        public static void Main(string[] ages)
+         static void Main(string[] ages)
         {
             DatabaseFacade db = new SQLContext().Database;
             db.EnsureDeleted();
             db.EnsureCreated();
 
-            //RegisterFactory.Create();
+            RegisterFactory.Create();
+            Blog.NewFactory.Create();
+
 
             Console.Read();
         }

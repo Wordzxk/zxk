@@ -20,7 +20,7 @@ namespace Word
         public void Setup()
         {
             service = new MockUserService();
-            model = new OnModel(service);
+            //model = new OnModel(service);
         }
         //œ˙ªŸ≤‚ ‘ª∑æ≥
         [TearDown]
@@ -32,7 +32,7 @@ namespace Word
         [Test]
         public void TestOne()
         {
-            OnModel model = new OnModel(new UserService());
+            //OnModel model = new OnModel(new UserService());
             model.Name = "≤‚ ‘K";
             model.Onpost();
             Assert.That(model.ModelState.ErrorCount, Is.EqualTo(1));

@@ -1,4 +1,11 @@
 ﻿@page
-@model Single
+@model WebThreetier.Pages.Suggest.SingleModel
 @{
+    ViewData["Title"] = "文章单页";
 }
+<h4>@Model.Blog.Body</h4>
+<main>
+    @Model.Blog.Body
+</main>
+<p>@ViewData["id"]</p>
+

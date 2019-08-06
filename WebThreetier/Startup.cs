@@ -34,8 +34,11 @@ namespace WebThreetier
             });
 
             //session需要地方（MemoryCache）存放
-            services.AddMemoryCache();
-            services.AddHttpContextAccessor();
+            services.AddService();
+            services.AddRepositories();
+
+            //services.AddMemoryCache();
+            //services.AddHttpContextAccessor();
 
             //services.AddScoped<DbContext, SQLContext>();
 

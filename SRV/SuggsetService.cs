@@ -13,7 +13,7 @@ namespace SRV
         private SuggestRepository _suggestRepository;
         public SuggestService()
         {
-            _suggestRepository = new SuggestRepository();
+            //_suggestRepository = new SuggestRepository();
         }
 
         public Suggest Publish(string title, string body, int authorId)
@@ -33,6 +33,10 @@ namespace SRV
             return _suggestRepository.Save(suggest);
         }
 
+        public Blog Get(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
    
 }

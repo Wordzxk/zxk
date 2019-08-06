@@ -9,7 +9,10 @@ namespace BLL.Repositorys
     [BindProperties]
     public class UserRepository :Repository<User>
     {
-     
+        public UserRepository(DbContext context) : base(context)
+        {
+        }
+
         //public DbSet<User> Entities { get; set; }
         //查询Name
         public User GetByName(string name)
