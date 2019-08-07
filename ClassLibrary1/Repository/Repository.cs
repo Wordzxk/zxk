@@ -10,9 +10,9 @@ namespace BLL.Repositorys
     public class Repository<T> where T : class
     {
         private DbContext _dbContext;
-        public Repository(DbContext context)
+        public Repository()
         {
-            _dbContext = context;
+            
             entities = _dbContext.Set<T>();
         }
 

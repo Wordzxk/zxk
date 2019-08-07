@@ -8,6 +8,10 @@ namespace BLL.Repositorys
 {
     public class EmailRepository :Repository<Emails>
     {
+        public EmailRepository()
+        {
+        }
+
         public EmailRepository(DbContext context) : base(context)
         {
         }

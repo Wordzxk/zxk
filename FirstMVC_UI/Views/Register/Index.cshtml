@@ -1,0 +1,22 @@
+﻿@model FirstMVC_UI.Models.Register.IndexModel
+@{
+    //ViewBag.Title = "Home Page";
+}
+
+<h1>主页面</h1>
+@using (Html.BeginForm())
+{
+    <br />
+    @Html.LabelFor(u => u.UserName)
+    <br />
+    @Html.TextBoxFor(m=>m.UserName,new {@class="input" })
+    <br />
+    @Html.ValidationMessageFor(m=>m.UserName)
+    <br />
+    <label>密码：</label>
+    <br />
+    @Html.PasswordFor(m=>m.Password)
+    <br />
+    <button type="submit">登陆</button>
+
+}
