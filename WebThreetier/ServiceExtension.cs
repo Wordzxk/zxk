@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    //用扩展方法添加声明周期与映射关系
+    //用扩展方法添加生命周期与依赖注入的映射关系
     public static class ServiceExtension
     { 
         public static void AddMockService(this IServiceCollection services)

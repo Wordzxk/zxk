@@ -7,13 +7,14 @@ using System.Text;
 namespace BLL
 {
     [BindProperties]
-    public class User
+    public class User:Entity
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         public User InvitedBy { get; set; }
-        //public Emails Email { get; set; }
+        
+        public virtual Emails Emails { get; set; }
 
 
         public void Register()

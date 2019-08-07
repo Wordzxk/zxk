@@ -37,15 +37,7 @@ namespace WebThreetier
             services.AddService();
             services.AddRepositories();
 
-            //services.AddMemoryCache();
-            //services.AddHttpContextAccessor();
-
-            //services.AddScoped<DbContext, SQLContext>();
-
-            //控制反转
-            //services.AddScoped<IUserService, UserService>();
-            //services.AddTransient<IUserService, UserService>();
-            //services.AddSingleton<IUserService, UserService>();
+            services.AddScoped<DbContext, SQLContext>();
 
             //services.AddHttpContextAccessor();
             //引入session
@@ -58,11 +50,10 @@ namespace WebThreetier
                 //    //确保session的cookie不受cookie policy影响
                 //    IsEssential = true
                 //};
-                //session的有效时间为20分钟，从上一次session的时间算起
+                //session的有效时间，从上一次session的时间算起
                 option.IdleTimeout = new TimeSpan(0, 10, 0);
             });
-
-
+           
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

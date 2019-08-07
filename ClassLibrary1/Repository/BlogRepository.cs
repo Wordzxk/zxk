@@ -24,6 +24,7 @@ namespace BLL.Repositorys
         {
             return entities
                 .Include(e=>e.Author)
+                //.ThenInclude(a=>a.Email)
                 .Single(u => u.Id == id); 
         }
 
