@@ -7,6 +7,6 @@ namespace FirstMVC_UI.Models.MainModel
 {
     public class AboutModel
     {
-        public string Doubt { get; } = "(⊙﹏⊙)";
+        public string Greet { get; } = "o(*￣▽￣*)o";
     }
 }
