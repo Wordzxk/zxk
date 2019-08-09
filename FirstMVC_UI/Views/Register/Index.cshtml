@@ -1,42 +1,28 @@
-﻿@using FirstMVC_UI.Models.Register
-@model FirstMVC_UI.Models.Register.IndexModel
+﻿@using FirstMVC_UI.Models.Model
+@model FirstMVC_UI.Models.Model.RegisterModel
 @{
     //ViewBag.Title = "Home Page";
 }
 
-<h1>注册</h1>
+<h1>用户信息注册</h1>
 @using (Html.BeginForm())
 {
-    <br />
-    @Html.LabelFor(u => u.UserName)
-    <br />
-    <input type="text" name="UserName" />
-    <br />
-    @Html.ValidationMessageFor(m=>m.UserName)
-    <br />
-
-    <label>密码：</label>
-    <br />
-    @Html.PasswordFor(m=>m.Password)
-    <br />
-
+    <label>名字:</label>
+    //
+    <label>年龄:</label>
+    //
     <div>
         <label>性别:</label>
         <label>@Html.RadioButtonFor(m=>m.IsMale,true)男</label>
-        <label>@Html.RadioButtonFor(m=>m.IsMale,false)</label>
+        <label>@Html.RadioButtonFor(m=>m.IsMale,false)女</label>
     </div>
-
+    
     <div>
-        <label>来自:</label>@Html.DropDownListFor(m=>m.InCitys,new SelectList(new Cities[] {Cities.BeiJing,Cities.ChongQing,Cities.ShangHai,Cities.ZhengZhou} )),"----")
         @Html.EnumDropDownListFor(m=>m.InCitys)
     </div>
 
     <div>
         <label>介绍:</label>@Html.TextAreaFor(m=>m.SelfIntroduction)
-    </div>
-
-    <div>
-        <label>@Html.CheckBoxFor(m=>m.RememberMe)记住我</label>
     </div>
 
     <button type="submit">登陆</button>

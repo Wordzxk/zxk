@@ -1,0 +1,30 @@
+﻿@using FirstMVC_UI.Models.TargerModel
+@model FirstMVC_UI.Models.TargerModel.TargerModel
+@{
+}
+
+<h1>发布目标</h1>
+@using (Html.BeginForm())
+{
+<div>
+    <label>标题(必填)</label><br />
+    @Html.TextAreaFor(m => m.Headline)
+</div>
+
+    <div>
+    <lable>详细说明:@Html.TextAreaFor(m => m.Explain)</lable>
+    </div>
+
+    <div>
+    <label>说明:</label>@Html.TextAreaFor(m => m.Label)
+    </div>
+
+    <div>
+       
+    </div>
+
+    <button type="button">提交</button>
+}
+
+
+

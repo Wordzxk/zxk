@@ -1,29 +1,27 @@
 ﻿using FirstMVC_UI.Models.Model;
+using FirstMVC_UI.Models.TargerModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace FirstMVC_UI.Controllers
 {
-    
-    public class RegisterController : Controller
+    public class TargerController : Controller
     {
-        //给View传参数
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
-        //接受前台数据
         [HttpPost]
-        public ActionResult PIndex(RegisterModel registerModel)
+        public ActionResult Index(TargerModel targerModel)
         {
             if (!ModelState.IsValid)
             {
-                return View(registerModel);
+                return View(targerModel);
             }
-
             return View();
         }
     }
