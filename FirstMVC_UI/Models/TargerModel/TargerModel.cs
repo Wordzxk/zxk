@@ -6,15 +6,24 @@ using System.Web.Mvc;
 
 namespace FirstMVC_UI.Models.TargerModel
 {
-    public class TargerModel
+    public class TargetModel
     {
+
         [Required(ErrorMessage = "* 标题必填哦")]
         public string Headline { get; set; }
         public string Explain { get; set; }
         public string Label { get; set; }
         public int Begintime { get; set; }
         public int EndTime { get; set; }
-        
+        public List<MessageModel> Messages { get; set; }
     }
-    
+    public class MessageModel
+    {
+        public int Id { get; set; }
+        public DateTime Created { get; set; }
+        public string Content { get; set; }
+        public bool Selected { get; set; }
+
+
+    }
 }

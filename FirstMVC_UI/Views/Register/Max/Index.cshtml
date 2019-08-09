@@ -8,7 +8,7 @@
 @using (Html.BeginForm())
 {
     <label>名字:</label>
-    //
+    @Html.ValidationMessageFor(m=>m.Name)
     <label>年龄:</label>
     //
     <div>
@@ -26,5 +26,6 @@
     </div>
 
     <button type="submit">登陆</button>
-
+    //
+    @Html.Action("Reminder")
 }

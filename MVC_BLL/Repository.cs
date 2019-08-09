@@ -2,7 +2,7 @@
 
 namespace MVC_BLL
 {
-    public class Class1
+    public class Repository
     {
     }
 }

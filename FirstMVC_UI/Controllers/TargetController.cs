@@ -8,15 +8,19 @@ using System.Web.Mvc;
 
 namespace FirstMVC_UI.Controllers
 {
-    public class TargerController : Controller
+    public class TargetController : Controller
     {
         [HttpGet]
         public ActionResult Index()
         {
+            //TargetModel targetModel = new TargetModel
+            //{
+            //Messages = new List<MessageItemModel>{}
+            //}
             return View();
         }
         [HttpPost]
-        public ActionResult Index(TargerModel targerModel)
+        public ActionResult Index(TargetModel targerModel)
         {
             if (!ModelState.IsValid)
             {

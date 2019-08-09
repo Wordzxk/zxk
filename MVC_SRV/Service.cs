@@ -2,7 +2,7 @@
 
 namespace MVC_SRV
 {
-    public class Class1
+    public class Service
     {
     }
 }

@@ -26,5 +26,13 @@ namespace FirstMVC_UI.Controllers
 
             return View();
         }
+        [ChildActionOnly]
+        public PartialViewResult Reninder()
+        {
+            ViewData["Id"] = 11;
+            ViewBag.Name = "？？？";
+
+            return PartialView();
+        }
     }
 }

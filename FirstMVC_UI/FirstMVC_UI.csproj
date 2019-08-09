@@ -120,7 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\TargerController.cs" />
+    <Compile Include="Controllers\TargetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
@@ -167,8 +167,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Register\Max\Index.cshtml" />
     <Content Include="Views\Targer\Index.cshtml" />
+    <Content Include="Views\Register\Max\Message.cshtml" />
+    <Content Include="Views\Register\Max\Reminder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

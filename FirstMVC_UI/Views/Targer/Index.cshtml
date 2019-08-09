@@ -1,29 +1,44 @@
 ﻿@using FirstMVC_UI.Models.TargerModel
-@model FirstMVC_UI.Models.TargerModel.TargerModel
+@model FirstMVC_UI.Models.TargerModel.TargetModel
 @{
 }
 
 <h1>发布目标</h1>
 @using (Html.BeginForm())
 {
-<div>
-    <label>标题(必填)</label><br />
-    @Html.TextAreaFor(m => m.Headline)
-</div>
-
     <div>
-    <lable>详细说明:@Html.TextAreaFor(m => m.Explain)</lable>
+        <label>标题(必填)</label><br />
+        @Html.TextAreaFor(m => m.Headline)
     </div>
 
     <div>
-    <label>说明:</label>@Html.TextAreaFor(m => m.Label)
+        <lable>详细说明:@Html.TextAreaFor(m => m.Explain)</lable>
     </div>
 
     <div>
-       
+        <label>说明:</label>@Html.TextAreaFor(m => m.Label)
+    </div>
+    <div>
+        <label><input type="checkbox" name="Remember" value="1" />一</label>
+        <label><input type="checkbox" name="Remember" value="2" />二</label>
+        <label><input type="checkbox" name="Remember" value="3" />三</label>
+        <label><input type="checkbox" name="Remember" value="4" />四</label>
+        <label><input type="checkbox" name="Remember" value="5" />五</label>
+        <label><input type="checkbox" name="Remember" value="6" />六</label>
+        <label><input type="checkbox" name="Remember" value="7" />日</label>
     </div>
 
-    <button type="button">提交</button>
+    @*//暂未添加
+        for (int i = 0; i < TargetModel.Messages; i++)
+        {
+            <div>
+                @Html.CheckBoxFor(m=>m.targetModel.Messages[i].Selected)
+                @Model.Messages[i].Content
+            </div>
+        }
+    *@
+    <input type="submit" value="提交" />
+
 }
 
 
