@@ -13,10 +13,7 @@ namespace FirstMVC_UI.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            //TargetModel targetModel = new TargetModel
-            //{
-            //Messages = new List<MessageItemModel>{}
-            //}
+      
             return View();
         }
         [HttpPost]
@@ -28,5 +25,6 @@ namespace FirstMVC_UI.Controllers
             }
             return View();
         }
+
     }
 }

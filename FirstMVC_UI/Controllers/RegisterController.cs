@@ -17,7 +17,7 @@ namespace FirstMVC_UI.Controllers
         }
         //接受前台数据
         [HttpPost]
-        public ActionResult PIndex(RegisterModel registerModel)
+        public ActionResult Index(RegisterModel registerModel)
         {
             if (!ModelState.IsValid)
             {
@@ -29,10 +29,12 @@ namespace FirstMVC_UI.Controllers
         [ChildActionOnly]
         public PartialViewResult Reninder()
         {
-            ViewData["Id"] = 11;
-            ViewBag.Name = "？？？";
+
+            //ViewData["Id"] = 11;
+            //ViewBag.Name = "？？？";
 
             return PartialView();
         }
+        
     }
 }
