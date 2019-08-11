@@ -20,7 +20,7 @@ namespace FirstMVC_UI.Models.MainModel
         [MinLength(4)]
         [Required(ErrorMessage = "* 密码不能为空o(*￣▽￣*)o")]
         public int Password { get; set; }
-
+        public string Captcha{ get; set; }
         public bool RememberMe { get; set; }
 
     }

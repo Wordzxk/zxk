@@ -23,6 +23,11 @@ namespace FirstMVC_UI.Controllers
             {
                 return View(registerModel);
             }
+            if (registerModel.Captcha != Session[CaptchaController.CAPTCHA].ToString())
+            {
+                ModelState.AddModelError("Captcha", "* 验证码输入错误");
+                return View(registerModel);
+            }
 
             return View();
         }

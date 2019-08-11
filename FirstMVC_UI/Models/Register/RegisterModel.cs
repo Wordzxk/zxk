@@ -13,8 +13,7 @@ namespace FirstMVC_UI.Models.Model
         public bool? IsMale { get; set; }
         public Cities? InCitys { get; set; }
         public string SelfIntroduction { get; set; }
-
-
+        public string Captcha { get;  set; }
     }
     public enum Cities
     {

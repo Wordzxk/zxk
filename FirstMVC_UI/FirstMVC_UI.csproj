@@ -171,13 +171,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Register\Max\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Target\Index.cshtml" />
-    <Content Include="Views\Register\Max\Message.cshtml" />
-    <Content Include="Views\Register\Max\Reminder.cshtml" />
+    <Content Include="Views\Register\Message.cshtml" />
+    <Content Include="Views\Register\Reminder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Captcha\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

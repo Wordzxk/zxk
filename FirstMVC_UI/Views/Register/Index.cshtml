@@ -1,0 +1,38 @@
+﻿@using FirstMVC_UI.Models.Model
+@model FirstMVC_UI.Models.Model.RegisterModel
+@{
+    //ViewBag.Title = "Home Page";
+}
+
+<h1>用户信息注册</h1>
+@using (Html.BeginForm())
+{
+    <label>名字:</label>
+    <input asp-for="RegisterModel.Name" />
+    <span asp-validation-for="RegisterModel.Name"></span>
+    <label>年龄:</label>
+
+    <div>
+        <label>性别:</label>
+        <label>@Html.RadioButtonFor(m => m.IsMale, true)男</label>
+        <label>@Html.RadioButtonFor(m => m.IsMale, false)女</label>
+    </div>
+
+    <div>
+        <label>地址</label>
+        @Html.EnumDropDownListFor(m => m.InCitys)
+    </div>
+
+    <div>
+        <label>介绍:</label>@Html.TextAreaFor(m => m.SelfIntroduction)
+    </div>
+    <div>
+        <label>验证码</label>
+        @Html.TextBoxFor(m => m.Captcha, new {style="width:80px;" }) <img src="/Captcha/Get" />
+        @Html.ValidationMessageFor(m => m.Captcha)
+    </div>
+
+    <button type="submit">登陆</button>
+    //
+    @*@Html.Action("Reminder")*@
+}

@@ -14,12 +14,15 @@
     @Html.PasswordFor(m => m.Password)<br />
     <div>
         <label>验证码</label>
-        //
+        @Html.TextBoxFor(m => m.Captcha)<img src="/Captcha/Get" />
     </div>
     <div>
         <label>@Html.CheckBoxFor(m => m.RememberMe)记住我</label>
     </div>
-
     <button type="button">登陆</button>
 }
-
+<script>
+    function refreshCaptcha() {
+        alert("暂时无用");
+    }
+</script>
