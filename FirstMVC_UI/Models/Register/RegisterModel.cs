@@ -8,8 +8,10 @@ namespace FirstMVC_UI.Models.Model
 {
     public class RegisterModel
     {
-        public string Name { get; set; }
-        public int Age { get; set; }
+        [Required(ErrorMessage ="* 用户名出现异常")]
+        public string UserName { get; set; }
+        [Required(ErrorMessage = "* 用户名或密码出现异常")]
+        public string Password { get; set; }
         public bool? IsMale { get; set; }
         public Cities? InCitys { get; set; }
         public string SelfIntroduction { get; set; }

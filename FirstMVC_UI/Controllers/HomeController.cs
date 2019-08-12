@@ -21,7 +21,6 @@ namespace FirstMVC_UI.Controllers
         //添加View参数可以使数据流动
         public ActionResult About()
         {
-            //ViewBag.Message = "Your application description page.";
             AboutModel aboutModel = new AboutModel();
 
             return View(aboutModel);

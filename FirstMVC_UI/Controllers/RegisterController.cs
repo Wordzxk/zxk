@@ -11,13 +11,15 @@ namespace FirstMVC_UI.Controllers
     {
         //给View传参数
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int? Id)
         {
-            return View();
+            RegisterModel registerModel = new RegisterModel();
+            ViewBag.Id = Id;
+            return View(registerModel);
         }
         //接受前台数据
         [HttpPost]
-        public ActionResult Index(RegisterModel registerModel)
+        public ActionResult Index(string UserName, RegisterModel registerModel)
         {
             if (!ModelState.IsValid)
             {
@@ -28,15 +30,14 @@ namespace FirstMVC_UI.Controllers
                 ModelState.AddModelError("Captcha", "* 验证码输入错误");
                 return View(registerModel);
             }
-
+            ViewBag.UserName = UserName;
             return View();
         }
         [ChildActionOnly]
-        public PartialViewResult Reninder()
+        public PartialViewResult Reminder(int? Id)
         {
-
-            //ViewData["Id"] = 11;
-            //ViewBag.Name = "？？？";
+            ViewBag.Id = Id;
+           
 
             return PartialView();
         }
