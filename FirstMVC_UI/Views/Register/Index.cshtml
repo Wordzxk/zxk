@@ -7,6 +7,7 @@
 <h1>用户信息注册</h1>
 @using (Html.BeginForm())
 {
+    @Html.TextBoxFor(m => m.Inviter.Name)
 
     <label>用户名:</label><br />
     <input type="text" name="UserName" /><br />
@@ -39,5 +40,10 @@
 }
 @*Reminder页面*@
 @Html.Action("Reminder")
+<hr />
 <h4>Id=@ViewBag.Id</h4>
 <h4>UserName=@ViewBag.UserName</h4>
+<hr />
+@*直接调用Remainder*@
+@Html.Partial("Reminder", 
+    new ViewDataDictionary { { "id", 1 }, { "Name", "看" } })

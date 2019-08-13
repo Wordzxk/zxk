@@ -34,12 +34,18 @@ namespace FirstMVC_UI.Controllers
             return View();
         }
         [ChildActionOnly]
-        public PartialViewResult Reminder(int? Id)
+        public PartialViewResult Reminder()
         {
-            ViewBag.Id = Id;
-           
+            ViewData["Id"] = 11;
+            ViewBag.Name = "Look";
 
-            return PartialView();
+            User user = new User
+            {
+                Id = 22,
+                Name = "Book"
+            };
+
+            return PartialView(user);
         }
         
     }

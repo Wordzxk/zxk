@@ -16,6 +16,8 @@ namespace FirstMVC_UI.Models.Model
         public Cities? InCitys { get; set; }
         public string SelfIntroduction { get; set; }
         public string Captcha { get;  set; }
+
+        public User Inviter { get; set; }
     }
     public enum Cities
     {
@@ -27,5 +29,10 @@ namespace FirstMVC_UI.Models.Model
         ChongQing,
         [Display(Name = "郑州")]
         ZhengZhou
+    }
+    public class User
+    {
+        public string Name { get; set; }
+        public int Id { get; set; }
     }
 }

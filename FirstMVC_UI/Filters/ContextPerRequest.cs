@@ -10,6 +10,7 @@ namespace FirstMVC_UI.Filters
     {
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
+            //dbContext.dispose();
             base.OnActionExecuted(filterContext);
         }
         public override void OnActionExecuting(ActionExecutingContext filterContext)
@@ -18,6 +19,7 @@ namespace FirstMVC_UI.Filters
         }
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
+            //dbContext.dispose();
             base.OnResultExecuted(filterContext);
         }
         public override void OnResultExecuting(ResultExecutingContext filterContext)
