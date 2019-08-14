@@ -34,5 +34,6 @@ namespace FirstMVC_UI.Models.Model
     {
         public string Name { get; set; }
         public int Id { get; set; }
+        public bool MD5Password { get; set; }
     }
 }

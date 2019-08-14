@@ -6,6 +6,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -25,10 +26,13 @@ namespace FirstMVC_UI.Controllers
 
             return View(aboutModel);
         }
-
+        [OutputCache(Duration =100
+            ,Order =300,VaryByParam ="none")]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            Thread.Sleep(1000);
+
+            ViewData["TIMN"] = DateTime.Now;
 
             return View();
         }

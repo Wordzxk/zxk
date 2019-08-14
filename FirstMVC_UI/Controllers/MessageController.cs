@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace FirstMVC_UI.Controllers
 {
-    public class TargetController : Controller
+    public class MessageController : Controller
     {
         [HttpGet]
         public ActionResult Index()
