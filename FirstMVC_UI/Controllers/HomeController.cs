@@ -1,6 +1,7 @@
 ﻿using FirstMVC_UI.Models.MainModel;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -14,9 +15,10 @@ namespace FirstMVC_UI.Controllers
 {
     public class HomeController : Controller
     {
-
+        [OutputCache(Duration =100)]
         public ActionResult Index()
         {
+            string connectionstring = ConfigurationManager.ConnectionStrings["SQLDbContext"].ConnectionString;
             return View();
         }
         //添加View参数可以使数据流动
@@ -30,7 +32,7 @@ namespace FirstMVC_UI.Controllers
             ,Order =300,VaryByParam ="none")]
         public ActionResult Contact()
         {
-            Thread.Sleep(1000);
+            
 
             ViewData["TIMN"] = DateTime.Now;
 

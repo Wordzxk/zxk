@@ -11,10 +11,11 @@ namespace BLL.Repositorys
     
     public class SQLContext : DbContext
     {
+        
         //定位数据库的地址
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=First;Integrated Security=True;";
+            string connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=DbContext;Integrated Security=True;";
             optionsBuilder
                 //.UseLoggerFactory(consoleLoggFactory)
                 .UseSqlServer(connectionString);

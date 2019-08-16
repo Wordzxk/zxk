@@ -11,6 +11,6 @@ namespace Factory
         internal const string PASSWORD = "12345";
 
         internal static SQLContext contest = new SQLContext();
-       
+
     }
 }

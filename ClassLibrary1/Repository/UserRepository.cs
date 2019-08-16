@@ -1,8 +1,5 @@
-﻿using System.Linq;
-using System;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace BLL.Repositorys
 {
@@ -11,9 +8,8 @@ namespace BLL.Repositorys
     {
         public UserRepository()
         {
-        }
 
-      
+        }
 
         //public DbSet<User> Entities { get; set; }
         //查询Name
@@ -30,7 +26,7 @@ namespace BLL.Repositorys
 
         public void SetEntities(SQLContext currentContext)
         {
-            return;
+            return ;
         }
     }
 }

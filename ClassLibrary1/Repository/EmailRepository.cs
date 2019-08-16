@@ -12,7 +12,7 @@ namespace BLL.Repositorys
         {
         }
 
-        public EmailRepository(DbContext context) : base(context)
+        public EmailRepository(DbContext context) 
         {
         }
 

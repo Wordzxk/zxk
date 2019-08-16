@@ -16,7 +16,8 @@ namespace WebThreetier.Pages.Shared
     {
         protected const string userIdKey = "userId";
         protected const string userAuthKey = "userAuth";
-
+        [BindProperty]
+        public string UserToken { get; set; }
          public virtual void OnGet()
         {
             string userIdvalue;

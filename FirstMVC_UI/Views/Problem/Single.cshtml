@@ -1,4 +1,11 @@
 ﻿@model FirstMVC_UI.Models.Problem.ItemModel
 
 <h1>求助单页</h1>
-@Model.Body
+
+
+<script type="text/javascript">
+    alert("JaVa");
+    location = "//页面";
+</script>
+
+@Html.Raw(Model.Body)

@@ -7,6 +7,8 @@ namespace FirstMVC_UI.Models.Problem
 {
     public class ItemModel
     {
+        //允许使用Html标签
+        [AllowHtml]
         public string Body { get; set; }
     }
 }

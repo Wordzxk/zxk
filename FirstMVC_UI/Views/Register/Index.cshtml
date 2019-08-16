@@ -38,12 +38,17 @@
     <button type="submit">登陆</button>
 
 }
+
+<p>时间:@DateTime.Now</p>
+@Html.Action("Reminder", "Register", true)
+
 @*Reminder页面*@
-@Html.Action("Reminder")
-<hr />
+
+
+@*<hr />
 <h4>Id=@ViewBag.Id</h4>
 <h4>UserName=@ViewBag.UserName</h4>
-<hr />
+<hr />*@
 @*直接调用Remainder*@
-@Html.Partial("Reminder", 
-    new ViewDataDictionary { { "id", 1 }, { "Name", "看" } })
+@*@Html.Partial("Reminder",
+    new ViewDataDictionary { { "id", 1 }, { "Name", "看" } })*@

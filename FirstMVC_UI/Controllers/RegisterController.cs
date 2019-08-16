@@ -13,17 +13,19 @@ namespace FirstMVC_UI.Controllers
 
         //给View传参数
         [HttpGet]
+        
         //简易缓存
-        [OutputCache(Duration = 60,VaryByParam ="Title")]
+        [OutputCache(Duration = 100,VaryByParam ="Title")]
         public ActionResult Index(int? Id, string name)
         {
-            string cachekey = "Register-Index";
+
+            string cachekey = "Register-Index";  
             if (HttpContext.Cache[cachekey] == null)
             {
                 string cacheValue = GetFromDB();
                 //缓存
                 HttpContext.Cache.Add(cachekey, cacheValue
-                    , null, DateTime.MinValue,new TimeSpan(0,0,10)
+                    , null, DateTime.MinValue, TimeSpan.Zero
                     , System.Web.Caching.CacheItemPriority.NotRemovable
                     , (key, value, reason) =>
                     {
@@ -61,16 +63,21 @@ namespace FirstMVC_UI.Controllers
         [ChildActionOnly]
         public PartialViewResult Reminder()
         {
-            ViewData["Id"] = 11;
-            ViewBag.Name = "Look";
 
-            User user = new User
-            {
-                Id = 22,
-                Name = "Book"
-            };
+            //Thread.Sleep(1000);
 
-            return PartialView(user);
+            ViewData["TIME"] = DateTime.Now;
+
+
+            //ViewData["Id"] = 11;
+            //ViewBag.Name = "Look";
+            //User user = new User
+            //{
+            //    Id = 22,
+            //    Name = "Book"
+            //};
+
+            return PartialView();
         }
 
     }

@@ -10,7 +10,7 @@ namespace BLL.Repositorys
     {
         public int authorId { get; set; }
 
-        public BlogRepository(DbContext context) : base(context)
+        public BlogRepository(DbContext context) 
         {
 
         }

@@ -10,7 +10,7 @@ namespace BLL.Repositorys
     {
       
 
-        public SuggestRepository(DbContext context) : base(context)
+        public SuggestRepository(DbContext context) 
         {
 
         }

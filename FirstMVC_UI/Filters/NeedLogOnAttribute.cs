@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace FirstMVC_UI.Filters
 {
-    //缺少页面,Controller类
+    
     public class NeedLogOnAttribute : AuthorizeAttribute
     {
         public const string USER_ID = "UserId";
