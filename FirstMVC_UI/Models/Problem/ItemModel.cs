@@ -10,5 +10,8 @@ namespace FirstMVC_UI.Models.Problem
         //允许使用Html标签
         [AllowHtml]
         public string Body { get; set; }
+        public string NewPost { get; set; }
+        public IList<string> Posts { get; set; }
+
     }
 }

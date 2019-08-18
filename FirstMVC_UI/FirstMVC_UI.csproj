@@ -192,6 +192,7 @@
     <Content Include="Views\Ad\Write.cshtml" />
     <Content Include="Views\Problem\New.cshtml" />
     <Content Include="Views\Problem\Single.cshtml" />
+    <Content Include="Views\Problem\Post.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

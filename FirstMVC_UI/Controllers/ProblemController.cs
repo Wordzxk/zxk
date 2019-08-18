@@ -25,9 +25,9 @@ namespace FirstMVC_UI.Controllers
         public ActionResult New(ItemModel model)
         {
             //存数据
-            int Id = Save(model);
+            int id = Save(model);
             //转页面
-            return RedirectToAction("Single", new { Id = Id });
+            return RedirectToAction("Single", new { id = id });
         }
 
         private int Save(ItemModel itemModel)
@@ -48,5 +48,14 @@ namespace FirstMVC_UI.Controllers
         {
             return problems[id];
         }
+
+        public ActionResult Post(int id, ItemModel itemModel)
+        {
+            ItemModel Problem = Get(id);
+            Problem.Posts = Problem.Posts ?? new List<string>();
+            Problem.Posts.Add(itemModel.NewPost);
+            return PartialView("Post",itemModel.NewPost);
+        }
+
     }
 }

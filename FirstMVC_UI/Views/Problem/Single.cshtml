@@ -1,11 +1,38 @@
 ﻿@model FirstMVC_UI.Models.Problem.ItemModel
 
 <h1>求助单页</h1>
+<h3>评论</h3>
+@if (Model.Posts != null)
+{
+    foreach (var item in Model.Posts)
+    {
+        <p>@item</p>
+    }
+}
+<div id="comment">这是comment</div>
+@using (Ajax.BeginForm("Post", "Problem", new { id = ViewContext.RouteData.Values["id"] },
+            new AjaxOptions
+            {
+                Confirm = "确认提交",
+                AllowCache=false,
+                HttpMethod="POST",
+                InsertionMode=InsertionMode.InsertAfter,
+                LoadingElementDuration=20,
+                LoadingElementId="WAIT",
+                OnBegin="alter('OnBegin')",
+                OnComplete="alter('OnComplete')",
+                OnFailure="alter('OnFailure')",
+                OnSuccess="alter('OnSuccess')",
+                UpdateTargetId="comment"
+            }))
+{
+    @Html.TextAreaFor(m => m.NewPost)<br />
 
-
+    <button type="submit">提交</button>
+}
 <script type="text/javascript">
     alert("JaVa");
-    location = "//页面";
+        //location = "//页面";
 </script>
 
 @Html.Raw(Model.Body)
