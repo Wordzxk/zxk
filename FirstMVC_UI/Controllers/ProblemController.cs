@@ -56,6 +56,9 @@ namespace FirstMVC_UI.Controllers
             Problem.Posts.Add(itemModel.NewPost);
             return PartialView("Post",itemModel.NewPost);
         }
-
+        public PartialViewResult Postson()
+        {
+            return PartialView();
+        }
     }
 }

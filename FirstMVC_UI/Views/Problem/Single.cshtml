@@ -14,16 +14,7 @@
             new AjaxOptions
             {
                 Confirm = "确认提交",
-                AllowCache=false,
-                HttpMethod="POST",
-                InsertionMode=InsertionMode.InsertAfter,
-                LoadingElementDuration=20,
-                LoadingElementId="WAIT",
-                OnBegin="alter('OnBegin')",
-                OnComplete="alter('OnComplete')",
-                OnFailure="alter('OnFailure')",
-                OnSuccess="alter('OnSuccess')",
-                UpdateTargetId="comment"
+            
             }))
 {
     @Html.TextAreaFor(m => m.NewPost)<br />
