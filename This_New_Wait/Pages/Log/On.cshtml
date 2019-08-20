@@ -1,37 +1,29 @@
 ﻿@page
-@{ 
-    Layout = null;
-}
-<html>
 
+<html>
+<head>
+    <title>用户登录</title>
+</head>
 <body>
-    <h1>内容</h1>
-    <hr />
-    <h1>跳转测试</h1>
-    <h1>跳转测试</h1>
-    <h1>跳转测试</h1>
-    <a name="One"></a>
-    <h4 class="text-primary">One</h4>
-    <p>This is a Log On One</p>
-    <h1>跳转测试</h1>
-    <h1>跳转测试</h1>
-    <h1>跳转测试</h1>
-    <a name="Two"></a>
-    <h4 class="text-primary"> Two</h4>
-    <p>This is a Two</p>
-    <h1>跳转测试</h1>
-    <h1>跳转测试</h1>
-    <h1>跳转测试</h1>
-    <a name="Three"></a>
-    <h4 class="text-primary">Three</h4>
-    <p>This is a Three</p>
-    <h1>跳转测试</h1>
-    <h1>跳转测试</h1>
-    <h1>跳转测试</h1>
-    <a name="Four"></a>
-    <h4 class="text-primary">Four</h4>
-    <p>This is a Four</p>
-    <hr />
+    <h1>用户登录</h1>
+    <form method="post">
+        <div>
+            <label>用户名:</label><br />
+            <input type="text" name="username" /><br />
+            <label>密码:</label><br />
+            <input type="password" name="password" /><br />
+        </div>
+        <div class="form-group">
+            <label>验证码</label><br />
+            <input name="InputImageCode" type="text" />
+        </div>
+        <button type="submit">登录</button>
+        <label>记住我<input type="checkbox" value="true" /></label>
+        <a href="/About">
+            <span>注册</span>
+        </a>
+    </form>
+    
 </body>
 </html>
 
