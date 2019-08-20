@@ -1,0 +1,51 @@
+﻿@page
+@{
+    Layout = null;
+}
+<html>
+
+<!--Wait-->
+<body>
+    <div>
+
+        <label class="checkbox-inline">
+            不显示
+        </label>
+        <label class="checkbox-inline">
+            <input name="ExcludeRewarded" type="checkbox" />
+            <input name="ExcludeRewarded" type="hidden" value="false" />
+            已酬谢
+        </label>
+        <label class="checkbox-inline">
+            <input name="ExcludeCanceled" type="checkbox" />
+            <input name="ExcludeCanceled" type="hidden" value="false" />
+            已撤销
+        </label>
+        <label class="checkbox-inline">
+            <input name="ExcludeIndeProgress" type="checkbox" />
+            <input name="ExcludeIndeProgress" type="hidden" value="false" />
+            协助中
+        </label>
+
+        <label class="checkbox-inline">
+            只显示
+        </label>
+        <label class="checkbox-inline">
+            <input name="OnlyMyFocus" type="checkbox" />
+            <input name="OnlyMyFocus" type="hidden" value="false" />
+            我的关注
+        </label>
+        <label class="checkbox-inline">
+            <input name="OnlySummaried" type="checkbox" />
+            <input name="OnlySummaried" type="hidden" value="false" />
+            有总结
+        </label>
+
+    </div>
+    <div>
+        <a href="/Log/On">LogOn页面</a>
+    </div>
+    
+</body>
+</html>
+

@@ -11,6 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Pages\Helper\Helper.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Pages\Log\Body.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\Log\On.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

@@ -1,6 +1,32 @@
 ﻿@page
 
-<h1>注册</h1>
-<h3>用户名</h3><br />
-<h3>密码</h3><hr />
+@{ 
+    Layout = null;
+}
+
+<form method="post">
+    <label>用户名:</label><input type="text" name="username" /><br />
+    <label>密码:</label><input type="password" name="password" /><br />
+    <label>性别</label>
+    <label><input type="radio"name="gender"value="male" />男</label>
+    <input type="radio"name="gender" value="female" />女<br />
+    <label>头像:</label>
+    <input type="file" multiple accept="" /><br />
+    <label>自我介绍:</label>
+    <textarea name="SelfDescription"></textarea><br />
+    <label>年龄:</label>
+    <select name="Age">
+        <option value="One">one</option>
+        <option value="Two">two</option>
+        <option value="Three">Three</option>
+        <option value="Foure">foure</option>
+    </select><br />
+    <button type="submit">提交</button>
+    <input type="reset" value="重置" />
+    <label>记住我<input type="checkbox"value="true" /></label>
+
+</form>
+
+
+
 
