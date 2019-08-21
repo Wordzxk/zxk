@@ -8,11 +8,14 @@ namespace This_New_Wait.Pages
 {
     public class AboutModel : PageModel
     {
-        public string Message { get; set; }
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+           
+        }
+        public void OnPost()
+        {
+
         }
     }
 }

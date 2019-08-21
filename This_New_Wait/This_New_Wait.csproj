@@ -26,6 +26,9 @@
     <Content Update="Pages\Log\On.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\Shared\_Title.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\Write\Write.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

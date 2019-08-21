@@ -13,5 +13,10 @@ namespace This_New_Wait.Pages
         {
 
         }
+
+        public void OnPost()
+        {
+
+        }
     }
 }

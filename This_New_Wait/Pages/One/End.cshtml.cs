@@ -7,5 +7,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace This_New_Wait.Pages
 {
-   
+
+   public class EndModel : PageModel
+    {
+
+        public void OnGet()
+        {
+
+        }
+
+        public void OnPost()
+        {
+
+        }
+    } 
 }

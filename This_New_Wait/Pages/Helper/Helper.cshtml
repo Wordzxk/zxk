@@ -1,47 +1,55 @@
 ﻿@page
 
 <html>
-
+<head>
+    <title>求助</title>
+</head>
 
 <body>
+    <h1>我要求助</h1>
+    <div style="color:aqua">
+        <p>第一次求助</p>
+        <p>没有自由发布权限</p>
+    </div>
     <div>
+        <label>标题:</label>
+        <input name="Content.Title" placeholder="简明扼要" type="text" />
+    </div>
 
-        <label class="checkbox-inline">
-            不显示
-        </label>
-        <label class="checkbox-inline">
-            <input name="ExcludeRewarded" type="checkbox" />
-            <input name="ExcludeRewarded" type="hidden" value="false" />
-            已酬谢
-        </label>
-        <label class="checkbox-inline">
-            <input name="ExcludeCanceled" type="checkbox" />
-            <input name="ExcludeCanceled" type="hidden" value="false" />
-            已撤销
-        </label>
-        <label class="checkbox-inline">
-            <input name="ExcludeIndeProgress" type="checkbox" />
-            <input name="ExcludeIndeProgress" type="hidden" value="false" />
-            协助中
-        </label>
+    <div>
+        <label>说明:</label>
+        <textarea name="Content.Body"></textarea>
+    </div>
+    <!--暂未解决
+    <div class="input-group">
+        <div class="input-group-btn">
+            <button type="button">--1级---</button>
 
-        <label class="checkbox-inline">
-            只显示
-        </label>
-        <label class="checkbox-inline">
-            <input name="OnlyMyFocus" type="checkbox" />
-            <input name="OnlyMyFocus" type="hidden" value="false" />
-            我的关注
-        </label>
-        <label class="checkbox-inline">
-            <input name="OnlySummaried" type="checkbox" />
-            <input name="OnlySummaried" type="hidden" value="false" />
-            有总结
-        </label>
+            <ul class="dropdown-menu">
+                <li><a data-keyboard-id="10">C#</a></li>
+                <li>JAVA</li>
+                <li>SQL</li>
+                <li>Html</li>
+                <li>Css</li>
+            </ul>
+        </div>
 
     </div>
-    
-    
+    -->
+    <div>
+        <label>定向求助:</label>
+        <div>
+            <input type="text" placeholder="输入你想求助的用户名" />
+        </div>
+    </div>
+    <div>
+        <label>悬赏:<a href="/One/End">帮帮币</a> </label>
+        <input type="text" placeholder="正整数，建议十枚以上" name="Reward"/>
+    </div>
+    <div>
+        <input type="submit"value="发布" />
+        <button type="button">保存</button>
+    </div>
 </body>
 </html>
 
