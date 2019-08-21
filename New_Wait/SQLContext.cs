@@ -1,9 +1,21 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
 
 namespace New_Wait
 {
-    public class SQLContext
+    public class SQLContext :DbContext
     {
-        //Data Source = (localdb)\ProjectsV13;Initial Catalog = Wait; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+        
+      /*暂时无用
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            string connectionString =
+                @"Data Source = (localdb)\ProjectsV13;Initial Catalog = Wait; Integrated Security = True;";
+                optionsBuilder.UseSqlServer(connectionString);
+        }
+        */
+
     }
+
 }
