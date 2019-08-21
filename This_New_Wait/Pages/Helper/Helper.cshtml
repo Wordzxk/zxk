@@ -7,49 +7,52 @@
 
 <body>
     <h1>我要求助</h1>
-    <div style="color:aqua">
-        <p>第一次求助</p>
-        <p>没有自由发布权限</p>
-    </div>
-    <div>
-        <label>标题:</label>
-        <input name="Content.Title" placeholder="简明扼要" type="text" />
-    </div>
-
-    <div>
-        <label>说明:</label>
-        <textarea name="Content.Body"></textarea>
-    </div>
-    <!--暂未解决
-    <div class="input-group">
-        <div class="input-group-btn">
-            <button type="button">--1级---</button>
-
-            <ul class="dropdown-menu">
-                <li><a data-keyboard-id="10">C#</a></li>
-                <li>JAVA</li>
-                <li>SQL</li>
-                <li>Html</li>
-                <li>Css</li>
-            </ul>
+    <header>
+        <div style="color:aqua">
+            <p>第一次求助</p>
+            <p>没有自由发布权限</p>
         </div>
-
-    </div>
-    -->
-    <div>
-        <label>定向求助:</label>
         <div>
-            <input type="text" placeholder="输入你想求助的用户名" />
+            <label>标题:</label>
+            <input name="Content.Title" placeholder="简明扼要" type="text" />
         </div>
-    </div>
-    <div>
-        <label>悬赏:<a href="/One/End">帮帮币</a> </label>
-        <input type="text" placeholder="正整数，建议十枚以上" name="Reward"/>
-    </div>
-    <div>
-        <input type="submit"value="发布" />
-        <button type="button">保存</button>
-    </div>
+
+        <div>
+            <label>说明:</label>
+            <textarea name="Content.Body"></textarea>
+        </div>
+        <!--暂未解决
+        <div class="input-group">
+            <div class="input-group-btn">
+                <button type="button">--1级---</button>
+
+                <ul class="dropdown-menu">
+                    <li><a data-keyboard-id="10">C#</a></li>
+                    <li>JAVA</li>
+                    <li>SQL</li>
+                    <li>Html</li>
+                    <li>Css</li>
+                </ul>
+            </div>
+
+        </div>
+        -->
+        <div>
+            <label>定向求助:</label>
+            <div>
+                <input type="text" placeholder="输入你想求助的用户名" />
+            </div>
+        </div>
+        <div>
+            <label>悬赏:<a href="/One/End">帮帮币</a> </label>
+            <input type="text" placeholder="正整数，建议十枚以上" name="Reward" />
+        </div>
+        <div>
+            <input type="submit" value="发布" />
+            <button type="button">保存</button>
+        </div>
+    </header>
+
 </body>
 </html>
 

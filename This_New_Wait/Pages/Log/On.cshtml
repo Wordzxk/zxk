@@ -6,24 +6,48 @@
 </head>
 <body>
     <h1>用户登录</h1>
-    <form method="post">
+    <header>
+        <form method="post">
+            <div>
+                <label>用户名:</label><br />
+                <input type="text" name="username" />
+            </div>
+            <div>
+                <label>密码:</label><br />
+                <input type="password" name="password" />
+            </div>
+            <div class="form-group">
+                <label>验证码</label><br />
+                <input name="InputImageCode" type="text" />
+            </div>
+            <button type="submit">登录</button>
+            <label>记住我<input type="checkbox" value="true" /></label>
+        </form>
+    </header>
+    <aside>
         <div>
-            <label>用户名:</label><br />
-            <input type="text" name="username" /><br />
-            <label>密码:</label><br />
-            <input type="password" name="password" /><br />
+            <h3><span>说明</span></h3>
+            <ol>
+                <li>
+                    我们希望
+                    <a href="/Index">一起帮</a>
+                    <span>直接解决</span>大家在
+                    <span>电脑操作/软件使用/编程学习</span>等方面的
+                    <span>具体问题</span>
+                </li>
+                <li>
+                    现在互联网远程技术
+                    <span>(比如QQ桌面共享)</span>已经非常成熟，当我们遇到问题时，如果别人能
+                    <span>直接远程给予帮助</span>岂不更好?
+                </li>
+            </ol>
         </div>
-        <div class="form-group">
-            <label>验证码</label><br />
-            <input name="InputImageCode" type="text" />
-        </div>
-        <button type="submit">登录</button>
-        <label>记住我<input type="checkbox" value="true" /></label>
-        <a href="/About">
-            <span>注册</span>
-        </a>
-    </form>
-    
+    </aside>
+
+
+    <a href="/About">
+        <span>注册</span>
+    </a>
 </body>
 </html>
 

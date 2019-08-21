@@ -7,118 +7,121 @@
 <body>
 
     <h1>发布新目标</h1>
-    <div>
-        <form method="post">
-            <div>
-                <label>标题:</label><br />
-                <input name="Title" placeholder="简明扼要，多个目标请分开发布" type="text" />
-            </div>
-            <div>
-                <label>详细说明:</label><br />
-                <textarea name="Description" placeholder="补充你认为需要说明的其他信息"></textarea>
-            </div>
-            <div>
-                <label>标签:</label>
-                <input name="KeyWords" placeholder="多个标签请用空格分开" type="text" />
-            </div>
-            <div>
-                <label>开始执行:</label><br />
-                <input name="Form" placeholder="默认为今天" type="text" value="Datetime" />
-            </div>
-            <div>
-                <label>结束时间:</label><br />
-                <input name="To" type="text" value="Datetime" />
-            </div>
-            <div>
-                <label>交作业时间:</label>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>一</th>
-                            <th>二</th>
-                            <th>三</th>
-                            <th>四</th>
-                            <th>五</th>
-                            <th>六</th>
-                            <th>日</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="DayInWeek" value="1" />
-                            </td>
-                            <td>
-                                <input type="checkbox" name="DayInWeek" value="2" />
-                            </td>
-                            <td>
-                                <input type="checkbox" name="DayInWeek" value="3" />
-                            </td>
-                            <td>
-                                <input type="checkbox" name="DayInWeek" value="4" />
-                            </td>
-                            <td>
-                                <input type="checkbox" name="DayInWeek" value="5" />
-                            </td>
-                            <td>
-                                <input type="checkbox" name="DayInWeek" value="6" />
-                            </td>
-                            <td>
-                                <input type="checkbox" name="DayInWeek" value="7" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div>
-                <label>每周可请假:</label>
+    <header>
+        <div>
+            <form method="post">
                 <div>
-                    <select name="DaysOfLeave">
-                        <option selected="selected">0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                    </select>
-                    <span>天</span>
+                    <label>标题:</label><br />
+                    <input name="Title" placeholder="简明扼要，多个目标请分开发布" type="text" />
                 </div>
-            </div>
-            <div>
-                <label>证明:</label><br />
-                <input name="Proof.Text" placeholder="证据的文字描述" type="text" /><br />
-                <input name="Url" placeholder="可以访问的网址" type="text" /><br />
-            </div>
-            <div>
-                <label>好心人最多:</label><br />
                 <div>
-                    <select name="MaxNumberOfSupervisor">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                    </select>
-                    <span>人</span>
+                    <label>详细说明:</label><br />
+                    <textarea name="Description" placeholder="补充你认为需要说明的其他信息"></textarea>
                 </div>
-            </div>
-            <div>
-                <label>未交作业罚金:</label>
                 <div>
-                    <input name="PunishCount" placeholder="正整数，建议十枚" type="text" />
-                    <span>枚</span>
+                    <label>标签:</label>
+                    <input name="KeyWords" placeholder="多个标签请用空格分开" type="text" />
                 </div>
-            </div>
-            <div class="submit">
-                <input type="submit" value="提交" />
-                <a href="/One/End">帮帮币</a>
-                <label>
-                    <input type="checkbox" name="Continue" value="true" />
-                    继续
-                </label>
-            </div>
-        </form>
-    </div>
+                <div>
+                    <label>开始执行:</label><br />
+                    <input name="Form" placeholder="默认为今天" type="text" value="Datetime" />
+                </div>
+                <div>
+                    <label>结束时间:</label><br />
+                    <input name="To" type="text" value="Datetime" />
+                </div>
+                <div>
+                    <label>交作业时间:</label>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>一</th>
+                                <th>二</th>
+                                <th>三</th>
+                                <th>四</th>
+                                <th>五</th>
+                                <th>六</th>
+                                <th>日</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="DayInWeek" value="1" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="DayInWeek" value="2" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="DayInWeek" value="3" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="DayInWeek" value="4" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="DayInWeek" value="5" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="DayInWeek" value="6" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="DayInWeek" value="7" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <label>每周可请假:</label>
+                    <div>
+                        <select name="DaysOfLeave">
+                            <option selected="selected">0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                        <span>天</span>
+                    </div>
+                </div>
+                <div>
+                    <label>证明:</label><br />
+                    <input name="Proof.Text" placeholder="证据的文字描述" type="text" /><br />
+                    <input name="Url" placeholder="可以访问的网址" type="text" /><br />
+                </div>
+                <div>
+                    <label>好心人最多:</label><br />
+                    <div>
+                        <select name="MaxNumberOfSupervisor">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                        <span>人</span>
+                    </div>
+                </div>
+                <div>
+                    <label>未交作业罚金:</label>
+                    <div>
+                        <input name="PunishCount" placeholder="正整数，建议十枚" type="text" />
+                        <span>枚</span>
+                    </div>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="提交" />
+                    <a href="/One/End">帮帮币</a>
+                    <label>
+                        <input type="checkbox" name="Continue" value="true" />
+                        继续
+                    </label>
+                </div>
+            </form>
+        </div>
+    </header>
+
 </body>
 </html>
 

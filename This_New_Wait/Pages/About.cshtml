@@ -5,64 +5,66 @@
     <title>用户信息注册</title>
 </head>
 <body>
-   
-    <h1>个人资料</h1>
-    <form method="post">
-        <label>用户名:</label><input type="text" name="username" /><br />
-        <label>密码:</label><input type="password" name="password" /><br />
+    <h1>个人资料注册</h1>
+    <header>
+        <form method="post">
+            <label>用户名:</label><input type="text" name="username" /><br />
+            <label>密码:</label><input type="password" name="password" /><br />
 
-        <label>头像:</label>
-        <input type="file" multiple accept="" /><br />
+            <label>头像:</label>
+            <input type="file" multiple accept="" /><br />
 
-        <label>性别</label>
-        <label><input type="radio" name="gender" value="male" />男</label>
-        <input type="radio" name="gender" value="female" />女<br />
-        <div>
-            <label>生日:</label>
-            <select name="BirthYear">
-                <option value="">----</option>
-                <option>2000</option>
-                <option>1999</option>
-                <option>1998</option>
-                <option>1997</option>
-                <option>1996</option>
-            </select>
-            <span class="input-group-addon">年</span>
-            <select name="BirthYear">
-                <option value="">----</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-            </select>
-            <span class="input-group-addon">月</span>
-            <select name="BirthYear">
-                <option value="">----</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-            <span class="input-group-addon">日</span>
-        </div>
+            <label>性别</label>
+            <label><input type="radio" name="gender" value="male" />男</label>
+            <input type="radio" name="gender" value="female" />女<br />
+            <div>
+                <label>生日:</label>
+                <select name="BirthYear">
+                    <option value="">----</option>
+                    <option>2000</option>
+                    <option>1999</option>
+                    <option>1998</option>
+                    <option>1997</option>
+                    <option>1996</option>
+                </select>
+                <span class="input-group-addon">年</span>
+                <select name="BirthYear">
+                    <option value="">----</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <span class="input-group-addon">月</span>
+                <select name="BirthYear">
+                    <option value="">----</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <span class="input-group-addon">日</span>
+            </div>
 
-        <label>自我介绍:</label>
-        <textarea name="SelfDescription"></textarea><br />
+            <label>自我介绍:</label>
+            <textarea name="SelfDescription"></textarea><br />
 
-        <button type="submit">提交</button>
-        <input type="reset" value="重置" />
-        <label>记住我<input type="checkbox" value="true" /></label>
-        <a href="/Log/On">登陆</a>
-    </form>
+            <button type="submit">提交</button>
+            <input type="reset" value="重置" />
+            <label>记住我<input type="checkbox" value="true" /></label>
+            <a href="/Log/On">登陆</a>
+        </form>
+    </header>
+    
 </body>
 </html>
 
