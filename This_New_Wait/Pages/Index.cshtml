@@ -1,5 +1,5 @@
 ﻿@page
-@{ 
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -7,9 +7,122 @@
 <head>
     <meta charset="utf-8" />
     <title>首页~一起帮</title>
+
     <link rel="stylesheet" href="/css/Wait.css" />
-    <style type="text/css"></style>
-    
+
+    <style type="text/css">
+        div.post_right {
+            /*向左浮动*/
+            float: left;
+            /*宽度百分之三十*/
+            width: 30%;
+            /*位置是相对的*/
+            position: relative;
+            /*1px的黑色虚线*/
+            border: 1px dotted black;
+        }
+
+        .target {
+            /*浏览器的盒子大小 边界框*/
+            -webkit-box-sizing: border-box;
+            /*边缘*/
+            margin: 100px 0 0 0;
+        }
+
+        .text {
+            /*文本对齐 居中*/
+            text-align: center;
+        }
+
+        .center-block {
+            /*显示 块元素*/
+            display: block;
+            /*边缘右边自动*/
+            margin-right: auto;
+            /*边缘左边自动*/
+            margin-left: auto;
+            /*最大宽度*/
+            max-width: 100%;
+        }
+
+        .button {
+            /*填充 上20 右20*/
+            padding: 20px 20px;
+            /*字体大小 18*/
+            font-size: 18px;
+            /*线的高度*/
+            line-height: 1.3px;
+        }
+
+        .btn {
+            color: #ffffff;
+            /*背景颜色*/
+            background-color: #0094ff;
+            /*边界颜色*/
+            border-color: #b6ff00;
+            /*文本装饰线 没有*/
+            text-decoration-line: none;
+        }
+
+        .home {
+            /*宽度*/
+            width: 1170px;
+            /*右边边缘自动*/
+            margin-right: auto;
+            /*左边边缘自动*/
+            margin-left: auto;
+            /*最小高度*/
+            min-height: 300px;
+        }
+
+        .content {
+            /*右边填充*/
+            padding-right: 15px;
+            /*左边填充*/
+            padding-left: 15px;
+            /*位置相对的*/
+            position: relative;
+        }
+
+        .margin {
+            height: 360px;
+            /*上方填充*/
+            padding-top: 50px;
+        }
+
+        .clear {
+            /*左右的流元素都清除*/
+            clear: both;
+        }
+
+        .top-nav {
+            /*位置固定*/
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            /*指标为10？？？*/
+            z-index: 10;
+        }
+
+        .banner{
+            /*填充顶端*/
+            padding-top:100px;
+            /*边缘*/
+            margin:0 auto;
+            width: 1500px;
+            height:700px;
+            /*位置相对的*/
+            position:relative;
+        }
+
+        footer {
+            /*位置固定*/
+            position: fixed;
+            /*底端*/
+            bottom: 10%;
+        }
+    </style>
+
 </head>
 <body>
     <header>
@@ -35,14 +148,14 @@
                     <h2 class="text">发布文章</h2>
                     <a href="/Helper/New">
                         <h1 class="text btn button">文章 </h1>
-                    </a> 
+                    </a>
                 </div>
             </div>
 
         </div>
 
     </header>
-    
+
 
 </body>
 </html>
