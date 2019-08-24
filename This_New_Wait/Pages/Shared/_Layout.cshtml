@@ -1,9 +1,56 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <style type="text/css">
+        .color{
+            background-color:#f7e0e0;
+            border-color:#e4d9d9;
+        }
+        .navbar{
+            top:0;
+            position:fixed;
+            right:0;
+            left:0;
+        }
+        .container{
+            width:1200px;
+            padding-right:15px;
+            padding-left:15px;
+            margin-right:auto;
+            margin-left:auto;
+        }
 
+        ul{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            padding-top:6px;
+            padding-bottom:6px;
+        }
+        li{
+            display:inline;
+        }
+        a:link,a:visited{
+            font-weight:bold;
+            color:#f7e0e0;
+            background-color:#fcfcfc;
+            text-decoration:none;
+            padding:6px;
+
+        }
+        a:hover,a:active{
+            background-color:#e4d9d9;
+        }
+    </style>
 </head>
 <body>
+    <ul>
+        <li><a href="/About">注册</a></li>
+        <li><a href="/Log/On">登录</a></li>
+        <li><a href="/Write/Write">推广</a></li>
+        <li><a href="/Helper/New">目标</a></li>
+        <li></li>
+    </ul>
 
     @RenderBody()
 

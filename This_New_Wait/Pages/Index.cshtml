@@ -1,43 +1,49 @@
 ﻿@page
-@{
+@{ 
     Layout = null;
 }
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>首页~一起帮</title>
-
+    <link rel="stylesheet" href="/css/Wait.css" />
+    <style type="text/css"></style>
+    
 </head>
 <body>
     <header>
-        <div>
-            <h2>远程协助</h2>
-            <a href="/Helper/Helper">
-                <img src="~/images/求助.svg" alt="我要求助" />
-                <h1>求助</h1>
-            </a>
+        <div class="home content target">
+            <div class="row clear">
+                <div class="post_right home margin content">
+                    <img src="~/images/求助.svg" alt="我要求助" class="center-block" />
+                    <h2 class="text">远程协助</h2>
+                    <a href="/Helper/Helper">
+                        <h1 class="text btn button content">求助</h1>
+                    </a>
+                </div>
+                <div class="post_right home margin content">
+                    <!--远程督促暂未完成-->
+                    <img src="~/images/督促.svg" alt="远程督促" class="center-block" />
+                    <h2 class="text">远程监督</h2>
+                    <a href="/Error">
+                        <h1 class="text btn button">督促</h1>
+                    </a>
+                </div>
+                <div class="post_right home margin content">
+                    <img src="~/images/文章.svg" class="center-block" />
+                    <h2 class="text">发布文章</h2>
+                    <a href="/Helper/New">
+                        <h1 class="text btn button">文章 </h1>
+                    </a> 
+                </div>
+            </div>
+
         </div>
-        <div>
-            <h2>远程督促</h2>
-            <!--远程督促暂未完成-->
-            <a href="/Error">
-                <img src="~/images/督促.svg" alt="远程督促" />
-                <h1>督促</h1>
-            </a>
-        </div>
-        <div>
-            <h2>发布文章</h2>
-            <a href="/Helper/New">
-                <img src="~/images/文章.svg" />
-                <h1>文章</h1>
-            </a>
-        </div>
+
     </header>
     
-    <a href="/About">注册</a>
-    <a href="/Log/On">登录</a>
-    <a href="/Write/Write">推广</a>
-    <a href="/Helper/New">目标</a>
+
 </body>
 </html>
 
