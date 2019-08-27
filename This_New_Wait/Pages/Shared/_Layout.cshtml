@@ -2,25 +2,27 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/Wait.css" />
-    <style type="text/css"> </style>
+    <style type="text/css">
+    </style>
     <!--引入bootstrap-->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-    <div class="nav-1">
-
-        <ul class="shape">
-
-            <li><a href="/About" class="a-1">注册</a></li>
-            <li><a href="/Log/On" class="a-1">登录</a></li>
-            <li><a href="/Write/Write" class="a-1">推广</a></li>
-            <li><a href="/Helper/New" class="a-1">目标</a></li>
-        </ul>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a href="/" data-toggle="tooltip" title="title">
+                <img class="pull-left" src="~/images/logo-big.svg" alt="一起帮" />
+            </a>
+            <p class="navbar-text pull-left">
+                <span style="font-size:18px;font-weight:600;">一起帮</span>
+            </p>
+        </div>
     </div>
 
     @RenderBody()
-  
+
 
     <hr>
     <div>
