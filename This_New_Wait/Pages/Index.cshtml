@@ -1,7 +1,5 @@
 ﻿@page
-@{
-    Layout = null;
-}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +9,7 @@
     <link rel="stylesheet" href="/css/Wait.css" />
 
     <style type="text/css">
-        div.post_right {
+        .post-a-2 {
             /*向左浮动*/
             float: left;
             /*宽度百分之三十*/
@@ -22,19 +20,27 @@
             border: 1px dotted black;
         }
 
-        .target {
-            /*浏览器的盒子大小 边界框*/
-            -webkit-box-sizing: border-box;
+        .post-a-1 {
+            /*宽度*/
+            width: 1500px;
+            /*右边边缘自动*/
+            margin-right: auto;
+            /*左边边缘自动*/
+            margin-left: auto;
+            /*最小高度*/
+            min-height: 550px;
             /*边缘*/
             margin: 100px 0 0 0;
+            -webkit-box-sizing: border-box;
+            border: 1px dotted black;
         }
 
-        .text {
+        .post-b-2 {
             /*文本对齐 居中*/
             text-align: center;
         }
 
-        .center-block {
+        .post-a-3 {
             /*显示 块元素*/
             display: block;
             /*边缘右边自动*/
@@ -54,37 +60,30 @@
             line-height: 1.3px;
         }
 
-        .btn {
+        .b-1 {
+            /*字体颜色*/
             color: #ffffff;
             /*背景颜色*/
             background-color: #0094ff;
-            /*边界颜色*/
-            border-color: #b6ff00;
-            /*文本装饰线 没有*/
-            text-decoration-line: none;
+            /*边界颜色
+                border-color: #b6ff00;
+            */
+            /*文本装饰线 没有
+                text-decoration-line: none;
+            */
         }
 
-        .home {
-            /*宽度*/
-            width: 1170px;
-            /*右边边缘自动*/
-            margin-right: auto;
-            /*左边边缘自动*/
-            margin-left: auto;
-            /*最小高度*/
-            min-height: 300px;
-        }
-
-        .content {
+        .c-1 {
             /*右边填充*/
-            padding-right: 15px;
+            padding-right: 30px;
             /*左边填充*/
             padding-left: 15px;
-            /*位置相对的*/
+            /*位置相对的
             position: relative;
+            */
         }
 
-        .margin {
+        .m-1 {
             height: 360px;
             /*上方填充*/
             padding-top: 50px;
@@ -100,54 +99,45 @@
             position: fixed;
             width: 100%;
             height: 100%;
-            /*指标为10？？？*/
-            z-index: 10;
         }
 
-        .banner{
+        .banner {
             /*填充顶端*/
-            padding-top:100px;
+            padding-top: 100px;
             /*边缘*/
-            margin:0 auto;
+            margin: 0 auto;
             width: 1500px;
-            height:700px;
+            height: 700px;
             /*位置相对的*/
-            position:relative;
-        }
-
-        footer {
-            /*位置固定*/
-            position: fixed;
-            /*底端*/
-            bottom: 10%;
+            position: relative;
         }
     </style>
 
 </head>
 <body>
     <header>
-        <div class="home content target">
-            <div class="row clear">
-                <div class="post_right home margin content">
-                    <img src="~/images/求助.svg" alt="我要求助" class="center-block" />
-                    <h2 class="text">远程协助</h2>
-                    <a href="/Helper/Helper">
-                        <h1 class="text btn button content">求助</h1>
+        <div class="post-a-1 c-1">
+            <div class="row clear ">
+                <div class="post-a-2  m-1 ">
+                    <img src="~/images/求助.svg" class="post-a-3" />
+                    <h2 class="post-b-2">远程协助</h2>
+                    <a href="/Helper/Helper" class="a-1">
+                        <div class="post-b-2 b-1 button">求助</div>
                     </a>
                 </div>
-                <div class="post_right home margin content">
+                <div class="post-a-2  m-1 ">
                     <!--远程督促暂未完成-->
-                    <img src="~/images/督促.svg" alt="远程督促" class="center-block" />
-                    <h2 class="text">远程监督</h2>
-                    <a href="/Error">
-                        <h1 class="text btn button">督促</h1>
+                    <img src="~/images/督促.svg" class="post-a-3" />
+                    <h2 class="post-b-2">远程监督</h2>
+                    <a href="/Error" class="a-1">
+                        <h1 class="post-b-2 b-1 button">督促</h1>
                     </a>
                 </div>
-                <div class="post_right home margin content">
-                    <img src="~/images/文章.svg" class="center-block" />
-                    <h2 class="text">发布文章</h2>
-                    <a href="/Helper/New">
-                        <h1 class="text btn button">文章 </h1>
+                <div class="post-a-2  m-1 ">
+                    <img src="~/images/文章.svg" class="post-a-3" />
+                    <h2 class="post-b-2">发布文章</h2>
+                    <a href="/Helper/New" class="a-1">
+                        <h1 class="post-b-2 b-1 button">文章 </h1>
                     </a>
                 </div>
             </div>
@@ -155,8 +145,8 @@
         </div>
 
     </header>
-
-
+   
+    <a href="/Log/Body">测试</a>
 </body>
 </html>
 

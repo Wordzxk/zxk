@@ -1,90 +1,34 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <style type="text/css">
-        .color {
-            /*背景颜色*/
-            background-color: #fcfcfc;
-            /*边框颜色*/
-            border-color: #808080;
-        }
-
-        .navbar {
-            top: 0;
-            /*位置固定的*/
-            position: fixed;
-            right: 0;
-            left: 0;
-        }
-
-        .container {
-            width:100%;
-            /*底端填充*/
-            padding-bottom:30px;
-            /*左边填充*/
-            padding-left: 80%;
-            /*右边边缘*/
-            margin-right: 30px;
-            /*左边边缘*/
-            margin-left: 30px;
-        }
-
-        img{
-            /*向左浮动*/
-            float:left;
-        }
-        /*ul{
-            list-style-type:none;
-            margin:0;
-            padding:0;
-            padding-top:6px;
-            padding-bottom:6px;
-        }
-        li{
-            display:inline;
-        }
-
-        a:link,a:visited{
-            font-weight:bold;
-            color:#808080;
-            background-color:#c8c3c3;
-            text-decoration:none;
-            padding:6px;
-
-        }
-        a:hover,a:active{
-            background-color:#615b5b;
-        }*/
-    </style>
+    <link rel="stylesheet" href="/css/Wait.css" />
+    <style type="text/css"> </style>
+    <!--引入bootstrap-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    
 </head>
 <body>
-    
-    @*<div class="navbar container">
-        <a href="/">
-        <img src="~/images/logo-big.svg" alt="一起帮Logo"/>
-        </a>
-        <p>
-            <span>一起帮</span>
-            <span>网络互助平台</span>
-        </p>
+    <div class="nav-1">
+
+        <ul class="shape">
+
+            <li><a href="/About" class="a-1">注册</a></li>
+            <li><a href="/Log/On" class="a-1">登录</a></li>
+            <li><a href="/Write/Write" class="a-1">推广</a></li>
+            <li><a href="/Helper/New" class="a-1">目标</a></li>
+        </ul>
     </div>
-    <div class="color navbar container">
-        <a href="/About" >注册</a>
-        <a href="/Log/On" >登录</a>
-        <a href="/Write/Write" >推广</a>
-        <a href="/Helper/New">目标</a>
-    </div>*@
-   
 
     @RenderBody()
+  
 
     <hr>
-    <footer>
+    <div>
         <a href="/Write/Us">关于我们</a>|
         <a href="/Write/FAQ">常见问题</a>|
         <a href="/Suggest/Suggest">意见建议</a>|
         <a href="/Suggest/Notice">历史通知</a>|
         <a href="#">友情捐赠</a>
-    </footer>
+    </div>
 </body>
 </html>

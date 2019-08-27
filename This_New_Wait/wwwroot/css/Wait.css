@@ -1,5 +1,108 @@
 ﻿
 body {
-
 }
 
+.a-1 {
+    /*去除超链接的短横线*/
+    text-decoration: none
+}
+
+.img {
+    float: left;
+}
+
+.Po{
+    position:fixed;
+}
+
+.clear {
+    /*左右的流元素都清除*/
+    clear: both;
+}
+
+.color-1 {
+    /*背景颜色*/
+    background-color: #fcfcfc;
+    /*边框颜色*/
+    /*border-color: #808080;*/
+}
+
+.navbar {
+    top: 0;
+    /*位置固定的*/
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+.banner {
+    /*填充顶端*/
+    padding-top: 100px;
+    /*边缘*/
+    margin: 0 auto;
+    width: 1500px;
+    height: 700px;
+    /*位置相对的*/
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    /*底端填充*/
+    padding-bottom: 30px;
+    /*左边填充*/
+    padding-left: 80%;
+    /*右边边缘*/
+    margin-right: 30px;
+    /*左边边缘*/
+    margin-left: 30px;
+}
+
+
+
+.shape {
+    /*边缘*/
+    margin: 0 auto;
+    width: 100%;
+    height: 40px;
+    /*背景颜色*/
+    background-color: #6495ED;
+    /*列表风格*/
+    list-style-type: none;
+    overflow: hidden;
+}
+
+    .shape li {
+        width: 25%;
+        /*文字对齐到中心*/
+        text-align: center;
+        padding-top: 8px;
+        /*填料底下*/
+        padding-bottom: 8px;
+        float: left;
+    }
+
+        .shape li a {
+            /*字体大小*/
+            font-size: 18px;
+            /*显示为块元素*/
+            display: block;
+            width: 100%;
+            /*文本修饰没有*/
+            text-decoration: none;
+            color: white;
+            /*字体粗细大*/
+            font-weight: bold;
+        }
+
+        .shape li:hover {
+            background-color: #c00;
+        }
+
+.nav-1 {
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
