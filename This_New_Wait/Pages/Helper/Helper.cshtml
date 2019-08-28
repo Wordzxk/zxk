@@ -2,56 +2,178 @@
 
 <html>
 <head>
+
     <title>求助</title>
+    <style>
+        .yellow-highlight {
+            background-color: #ffffe0;
+            border: 2px dashed#eee;
+            border-radius: 4px 5px;
+        }
+
+        .widget {
+            padding: 15px;
+            margin-bottom: 30px;
+            word-break: break-all;
+        }
+
+        .profile-no-picture {
+            height: 100px;
+            width: 100px;
+            padding-top: 35px;
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>我要求助</h1>
-    <header>
-        <div style="color:aqua">
-            <p>第一次求助</p>
-            <p>没有自由发布权限</p>
-        </div>
-        <div>
-            <label>标题:</label>
-            <input name="Content.Title" placeholder="简明扼要" type="text" />
-        </div>
-
-        <div>
-            <label>说明:</label>
-            <textarea name="Content.Body"></textarea>
-        </div>
-        <!--暂未解决
-        <div class="input-group">
-            <div class="input-group-btn">
-                <button type="button">--1级---</button>
-
-                <ul class="dropdown-menu">
-                    <li><a data-keyboard-id="10">C#</a></li>
-                    <li>JAVA</li>
-                    <li>SQL</li>
-                    <li>Html</li>
-                    <li>Css</li>
-                </ul>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-9">
+                <h2 class="page-header" style="padding:40px 0 0 0;">
+                    <span aria-hidden="true"></span> 我要求助
+                </h2>
+                <div class="yellow-highlight text-info" style="padding:10px 10px 0 10px;
+                    margin-bottom:15px;">
+                    <p>
+                        <span></span>这是你第一次发布求助
+                    </p>
+                    <p>
+                        你还没有自由发布的权限
+                    </p>
+                </div>
+                <form action="/Helper/Helper" method="post" novalidate="novalidate">
+                    <div class="checkbox clearfix">
+                        <label class="pull-right text-primary">需要协助</label>
+                    </div>
+                    <div class="form-group">
+                        <label>标题:</label>
+                        <input id="Content_Title" class="form-control" name="Content.Title"
+                               placeholder="简明扼要" type="text" style="height:35px;width:200px;" />
+                    </div>
+                    <div class="form-group">
+                        <label>说明:</label>
+                        <div>
+                            <textarea name="Content.Body"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>关键字</label>
+                        <div style="padding-bottom:3px;"></div>
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="button">---1级---</button>
+                                <button class="btn btn-default" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toddle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>编程开发语言</li>
+                                    <li>工具软件</li>
+                                    <li>顾问系统</li>
+                                    <li>操作系统</li>
+                                </ul>
+                            </div>
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="button">---2级---</button>
+                                <button class="btn btn-default" type="button" data-toggle="dropdown" aria-expanded="false"
+                                        aria-haspopup="true">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toddle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>C#</li>
+                                    <li>JAVA</li>
+                                    <li>Javascript</li>
+                                    <li>html</li>
+                                    <li>SQL</li>
+                                </ul>
+                            </div>
+                            <input class="form-control" type="text" placeholder="自定义关键字，使用空格分隔" style="height:30px;" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group">
+                            <label>
+                                定向求助:(<a>推荐</a>)
+                                <small>
+                                    <span data-toggle="tooltip"></span>
+                                </small>
+                            </label>
+                        </label>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="输入你想求助的用户名" style="height:30px;" />
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="checkbox pull-right" style="margin:0px;">
+                            <label style="padding-left:460px;">
+                                <input id="Settlement" name="Settlement" type="checkbox" value="true" />
+                                据实结算
+                            </label>
+                        </div>
+                        <label style="display:contents;">
+                            悬赏
+                            <a href="#" data-toggle="tooltip">
+                                帮帮币:(
+                            </a>
+                            <a href="#">
+                                现有
+                            </a>
+                            <small data-toggle="tooltip"></small>
+                            )
+                        </label>
+                        <input id="Reward" class="form-control" type="text" name="Reward" style="height:30px;" />
+                        <span>枚</span>
+                        <a class="pull-right" href="#">如何获得“帮帮币”</a>
+                    </div>
+                    <div>
+                        <input class="btn btn-primary" type="submit" value="发布" />
+                        <button class="btn btn-default" type="button" data-toggle="tooltip">保存</button>
+                        <small class="text-success"></small>
+                    </div>
+                </form>
             </div>
-
-        </div>
-        -->
-        <div>
-            <label>定向求助:</label>
-            <div>
-                <input type="text" placeholder="输入你想求助的用户名" />
+            <div class="col-md-3" style="margin-top:50px">
+                <div class="yellow-highlight widget">
+                    <h4>新手任务</h4>
+                    <p>
+                        填写：<a href="#">联系方式</a>
+                    </p>
+                    <p>
+                        激活：<a href="#">Email</a>
+                    </p>
+                    <p>
+                        邀请：<a href="#">我的小伙伴</a>
+                    </p>
+                    <p>
+                        参加：<a href="#">新人测试</a>
+                    </p>
+                    <p>
+                        发布：<a href="#">第一个求助</a>
+                    </p>
+                    <a class="btn pull-right" href="#">
+                        修改
+                    </a>
+                    <div id="profile-no-picture" class="img-responsive img-thumbnail">
+                        <span id="camera"></span>
+                        <div id="wait" class="profile-no-picture">
+                            等待上传
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>用户:</label>
+                            <span data-toggle="tooltip">
+                                <a href="#">Name</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div>
-            <label>悬赏:<a href="/One/End">帮帮币</a> </label>
-            <input type="text" placeholder="正整数，建议十枚以上" name="Reward" />
-        </div>
-        <div>
-            <input type="submit" value="发布" />
-            <button type="button">保存</button>
-        </div>
-    </header>
+
+    </div>
 
 </body>
 </html>

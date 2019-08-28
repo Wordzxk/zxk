@@ -8,21 +8,182 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 
     <link href="~/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <style>
+        .flag {
+            z-index: 100;
+            position: fixed;
+            background-color: powderblue;
+            padding: 5px 7px;
+            border-bottom-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+
+        
+    </style>
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div>
             <a href="/" data-toggle="tooltip" title="title">
                 <img class="pull-left" src="~/images/logo-big.svg" alt="一起帮" />
             </a>
             <p class="navbar-text pull-left">
-                <span style="font-size:18px;font-weight:600;">一起帮</span>
+                <span style="font-size:17px;font-weight:600;">一起帮</span>
+                <span class="visible-md-inline visible-lg-inline">网络互助平台</span>
             </p>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            求助
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">督导班</li>
+                            <li>
+                                <a href="#">疑问发布</a>
+                            </li>
+                            <li>
+                                <a href="#">疑问列表</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">列表</a>
+                            </li>
+                            <li>
+                                <a href="#">发布</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            督促
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">求督促</a>
+                            </li>
+                            <li>
+                                <a href="#">督促别人</a>
+                            </li>
+                            <li>
+                                <a href="#">我的目标</a>
+                            </li>
+                            <li>
+                                <a href="#">我的督促</a>
+                            </li>
+                            <li>
+                                <a href="#">未交作业</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            文章
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">列表</a>
+                            </li>
+                            <li>
+                                <a href="#">开通</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            APP下载
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Android</a>
+                            </li>
+                            <li>
+                                <a href="#">ios</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="text-primary dropdown-toggle" data-toggle="dropdown"
+                           href="#" role="button" aria-expanded="true">
+                            <span class="text-primary">
+                                <span>Name</span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="text-warning">
+                                <a href="">
+                                    新手任务
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    我的主页
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li data-toggle="tooltip">
+                                <a href="#">
+                                    帮帮豆
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    帮帮点
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    帮帮币
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">
+                                修改
+                            </li>
+                            <li>
+                                <a href="#">
+                                    我的密码
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    联系资料
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    个人资料
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    退出登录
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            后台
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
     @RenderBody()
-
+    <a class="flag text-center" href="/Write/Us" style="bottom:132px;right:0px">
+        <span></span><br />
+        帮助
+    </a>
+    <a class="flag text-center" href="/Suggest/Suggest" style="bottom:80px;right:0px;">
+        <span></span><br />
+        反馈
+    </a>
 
     <hr>
     <div>
