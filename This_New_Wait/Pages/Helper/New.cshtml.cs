@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace This_New_Wait.Pages
 {
-   public class NewModel : PageModel
+
+    namespace This_New_Wait.Pages
     {
-        public void OnGet()
+        public class NewModel : PageModel
         {
+            public void OnGet()
+            {
 
-        }
+            }
 
-        public void OnPost()
-        {
+            public void OnPost()
+            {
 
+            }
         }
     }
 }

@@ -2,49 +2,101 @@
 
 <html>
 <head>
+    <style>
+        .h2-inline {
+            font-size: 30px;
+        }
 
+        .widget {
+            border: 1px dashed#eee;
+            padding:15px;
+            margin-bottom:30px;
+            word-break:break-all;
+            background-color:#fff;
+        }
+
+        .text-bold{
+            font-weight:600;
+        }
+
+        .roadmap-content{
+            padding:5px 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>意见建议</h1>
-    <header>
-        <form method="post">
-            <div>
-                <div>
-                    <label>
-                        <span>只显示</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="filter" />
-                        未处理
-                    </label>
-                    <label>
-                        <input type="radio" name="filter" />
-                        bug
-                    </label>
-                    <label>
-                        <input type="radio" name="filter" />
-                        建议
-                    </label>
-                    <label>
-                        <input type="radio" name="filter" />
-                        完成
-                    </label>
-                    <label>
-                        <input type="radio" name="filter" />
-                        全部
-                    </label>
+    <div class="container body-content">
+        <div class="row" style="margin-top:60px;">
+            <div class="col-md-8">
+                <div class="h2-inline" style="padding-top:20px;">
+                    意见建议
+                </div><hr />
+                <form action="/Suggest" method="post">
+                    <div class="clearfix" style="border-left:7px solid;margin-bottom:20px;">
+                        <div class="text-info" style="margin:5px 0">
+                            <label class="radio-inline">
+                                只显示
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="filter" value="WaitHandle" />
+                                未处理
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="filter" value="Bug" />
+                                bug
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="filter" value="Feature" />
+                                建议
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="filter" value="Completed" />
+                                完成
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="filter" />
+                                全部
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="col-md-4 visible-md visible-lg">
+                <div class="widget">
+                    <h4 class="text-bold" style="margin-bottom:20px;">
+                        开发路线图
+                    </h4>
+                    <div>
+                        <p>
+                            <a data-toggle="collapse"href="#">用户</a>
+                        </p>
+                        <p>
+                            <a data-toggle="collapse"href="#">文章和投稿</a>
+                        </p>
+                        <p>
+                           <a data-toggle="collapse"href="#">积分管理</a>
+                        </p>
+                        <div id="creditMgr" class="collapse in text-muted roadmap-content">
+                            <p>引入支付宝/微信接口</p>
+                            <p>全站积分情况统计</p>
+                        </div>
+                        <p>
+                            <a data-toggle="collapse"href="#">关键字组织检索</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </form>
-    </header>
-    <article>
-        <div>
-            <h4></h4>
         </div>
-        <div></div>
-        <div></div>
-    </article>
-    
+    </div>
+
 </body>
 </html>
 
